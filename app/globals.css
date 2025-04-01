@@ -3,6 +3,10 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --blood-red: #BB0000;
+  --blood-red-hover: #FF0000;
+  --dark-bg: #080808;
+  --darker-bg: #050505;
 }
 
 @theme inline {
@@ -20,7 +24,82 @@
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background-color: var(--dark-bg);
+  color: #f0f0f0;
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Blood drip effect for headings */
+.blood-drip {
+  text-shadow: 0 0 5px var(--blood-red);
+  position: relative;
+}
+
+.blood-drip::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  width: 2px;
+  height: 15px;
+  background-color: var(--blood-red);
+  transform: translateX(-50%);
+  animation: drip 4s infinite;
+}
+
+@keyframes drip {
+  0% { height: 0; opacity: 0; }
+  50% { height: 15px; opacity: 1; }
+  100% { height: 30px; opacity: 0; }
+}
+
+/* Subtle texture overlay */
+.texture-overlay {
+  position: relative;
+}
+
+.texture-overlay::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h40v40H0V0zm40 40h40v40H40V40zm0-40h40v40H40V0z' fill='%23000000' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+  pointer-events: none;
+  opacity: 0.4;
+}
+
+/* Animation keyframes */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 1.5s ease-in-out forwards;
+}
+
+.animation-delay-3000 {
+  animation-delay: 3s;
+}
+
+/* Mask fallback for browsers without mask-image support */
+.mask-fallback {
+  position: relative;
+}
+
+.mask-fallback::before {
+  content: 'EXODIA';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 8rem;
+  font-weight: 900;
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  background-image: linear-gradient(to bottom, rgba(187,0,0,0.9), rgba(255,255,255,0.7));
+  z-index: 30;
 }
