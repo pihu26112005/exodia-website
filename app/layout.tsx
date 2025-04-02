@@ -4,6 +4,10 @@ import "./globals.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import HorrorTimer from "./components/HorrorTimer";
+<<<<<<< HEAD
+=======
+import PreLoader from "./components/PreLoader";
+>>>>>>> origin/main
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,6 +35,10 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col bg-[#080808] relative`}
       >
         <div className="fixed inset-0 bg-[#1a0000] -z-10" />
+<<<<<<< HEAD
+=======
+        <PreLoader />
+>>>>>>> origin/main
         <Header />
         <main className="flex-grow relative z-10">
           {children}

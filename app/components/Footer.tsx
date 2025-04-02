@@ -1,7 +1,6 @@
 'use client';
 
 import Link from 'next/link'
-import { FaWhatsapp, FaInstagram, FaTwitter, FaYoutube, FaLinkedin, FaFacebook } from 'react-icons/fa'
 import { motion } from 'framer-motion'
 
 const Footer = () => {

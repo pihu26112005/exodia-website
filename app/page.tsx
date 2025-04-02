@@ -136,7 +136,7 @@ export default function Home() {
               transition={{ duration: 0.6, delay: 0.1 }}
               viewport={{ once: true }}
             >
-              <div className="relative h-[35rem] w-[28rem] max-[400px]:h-[14rem] max-[400px]:w-[10rem] max-md:h-[18rem] max-md:w-[16rem] max-lg:h-[20rem] max-lg:w-[15rem] max-2xl:h-[30rem] max-2xl:w-[21rem] overflow-hidden rounded-2xl mx-auto group">
+              <div className="relative h-[35rem] w-[28rem] max-[400px]:h-[14rem] max-[400px]:w-[10rem] max-md:h-[18rem] max-md:w-[16rem] max-lg:h-[20rem] max-lg:w-[15rem] max-2xl:h-[30rem] max-2xl:w-[2zrem] overflow-hidden rounded-2xl mx-auto group">
                 {/* Image */}
                 <Image
                   src={src}
