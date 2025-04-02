@@ -1,111 +1,108 @@
+'use client';
+
 import Link from 'next/link'
 import { FaWhatsapp, FaInstagram, FaTwitter, FaYoutube, FaLinkedin, FaFacebook } from 'react-icons/fa'
+import { motion } from 'framer-motion'
 
 const Footer = () => {
   return (
-    <footer className="bg-[#050505] text-white py-16 border-t border-[#BB0000]/50 texture-overlay">
-      <div className="container mx-auto px-8">
-        <div className="flex justify-between mb-16">
-          <div>
-            <h2 className="text-4xl font-bold mb-4 blood-drip">EXODIA '25</h2>
+    <footer className="bg-[#050505] text-white py-12 sm:py-16 relative overflow-hidden">
+      {/* Blood splatter background */}
+      <div className="absolute inset-0 bg-[url('/blood-splatter.png')] opacity-5 mix-blend-multiply"></div>
+      
+      <div className="container mx-auto px-4 sm:px-8 relative z-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-12">
+          {/* About Section */}
+          <div className="space-y-4">
+            <h3 className="text-xl sm:text-2xl font-bold text-[#BB0000]">About Exodia</h3>
+            <p className="text-gray-400 text-sm sm:text-base">
+              IIT Mandi's annual technical and cultural fest, bringing together the brightest minds for an unforgettable experience.
+            </p>
           </div>
-          
-          <div>
-            <h3 className="text-xl font-semibold mb-4 text-[#BB0000]">Participate</h3>
+
+          {/* Quick Links */}
+          <div className="space-y-4">
+            <h3 className="text-xl sm:text-2xl font-bold text-[#BB0000]">Quick Links</h3>
             <ul className="space-y-2">
-              <li>
-                <Link href="/events" className="hover:text-[#BB0000] transition-all duration-300 group relative">
-                  Events Portal
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#BB0000] transition-all duration-300 group-hover:w-full"></span>
-                </Link>
+              {[
+                { href: '/events', label: 'Events' },
+                { href: '/schedule', label: 'Schedule' },
+                { href: '/sponsors', label: 'Sponsors' },
+                { href: '/contact', label: 'Contact' }
+              ].map((link) => (
+                <li key={link.href}>
+                  <Link 
+                    href={link.href}
+                    className="text-gray-400 hover:text-[#BB0000] transition-colors text-sm sm:text-base"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Contact Info */}
+          <div className="space-y-4">
+            <h3 className="text-xl sm:text-2xl font-bold text-[#BB0000]">Contact Us</h3>
+            <ul className="space-y-2 text-sm sm:text-base">
+              <li className="text-gray-400">
+                <span className="text-[#BB0000]">Email:</span> exodia@iitmandi.ac.in
               </li>
-              <li>
-                <Link href="/join" className="hover:text-[#BB0000] transition-all duration-300 group relative">
-                  Join The Community
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#BB0000] transition-all duration-300 group-hover:w-full"></span>
-                </Link>
+              <li className="text-gray-400">
+                <span className="text-[#BB0000]">Phone:</span> +91 1234567890
               </li>
-              <li>
-                <Link href="/brochure" className="hover:text-[#BB0000] transition-all duration-300 group relative">
-                  Brochure
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#BB0000] transition-all duration-300 group-hover:w-full"></span>
-                </Link>
+              <li className="text-gray-400">
+                <span className="text-[#BB0000]">Address:</span> IIT Mandi, Himachal Pradesh
               </li>
             </ul>
           </div>
 
-          <div>
-            <h3 className="text-xl font-semibold mb-4 text-[#BB0000]">Explore More</h3>
-            <ul className="space-y-2">
-              <li>
-                <Link href="/about" className="hover:text-[#BB0000] transition-all duration-300 group relative">
-                  About Exodia
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#BB0000] transition-all duration-300 group-hover:w-full"></span>
-                </Link>
-              </li>
-              <li>
-                <Link href="/attractions" className="hover:text-[#BB0000] transition-all duration-300 group relative">
-                  Previous Star Attractions
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#BB0000] transition-all duration-300 group-hover:w-full"></span>
-                </Link>
-              </li>
-              <li>
-                <Link href="/gallery" className="hover:text-[#BB0000] transition-all duration-300 group relative">
-                  Gallery
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#BB0000] transition-all duration-300 group-hover:w-full"></span>
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="text-xl font-semibold mb-4 text-[#BB0000]">Reach Out To Us</h3>
-            <ul className="space-y-2">
-              <li>
-                <Link href="/contact" className="hover:text-[#BB0000] transition-all duration-300 group relative">
-                  Contact Us
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#BB0000] transition-all duration-300 group-hover:w-full"></span>
-                </Link>
-              </li>
-              <li>
-                <Link href="/team" className="hover:text-[#BB0000] transition-all duration-300 group relative">
-                  Core Team
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#BB0000] transition-all duration-300 group-hover:w-full"></span>
-                </Link>
-              </li>
-              <li>
-                <Link href="/developers" className="hover:text-[#BB0000] transition-all duration-300 group relative">
-                  Developers
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#BB0000] transition-all duration-300 group-hover:w-full"></span>
-                </Link>
-              </li>
-            </ul>
+          {/* Social Links */}
+          <div className="space-y-4">
+            <h3 className="text-xl sm:text-2xl font-bold text-[#BB0000]">Follow Us</h3>
+            <div className="flex space-x-4 sm:space-x-6">
+              {[
+                { href: '#', icon: 'instagram' },
+                { href: '#', icon: 'facebook' },
+                { href: '#', icon: 'twitter' },
+                { href: '#', icon: 'linkedin' }
+              ].map((social) => (
+                <motion.a
+                  key={social.icon}
+                  href={social.href}
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="w-8 h-8 sm:w-10 sm:h-10 bg-[#BB0000]/20 rounded-full flex items-center justify-center hover:bg-[#BB0000]/40 transition-colors"
+                >
+                  <span className="sr-only">{social.icon}</span>
+                </motion.a>
+              ))}
+            </div>
           </div>
         </div>
 
-        <div className="flex justify-center gap-6 mb-8">
-          <Link href="#" className="text-2xl hover:text-[#BB0000] transition-all duration-300">
-            <FaWhatsapp />
-          </Link>
-          <Link href="#" className="text-2xl hover:text-[#BB0000] transition-all duration-300">
-            <FaInstagram />
-          </Link>
-          <Link href="#" className="text-2xl hover:text-[#BB0000] transition-all duration-300">
-            <FaTwitter />
-          </Link>
-          <Link href="#" className="text-2xl hover:text-[#BB0000] transition-all duration-300">
-            <FaYoutube />
-          </Link>
-          <Link href="#" className="text-2xl hover:text-[#BB0000] transition-all duration-300">
-            <FaLinkedin />
-          </Link>
-          <Link href="#" className="text-2xl hover:text-[#BB0000] transition-all duration-300">
-            <FaFacebook />
-          </Link>
-        </div>
-
-        <div className="text-center text-sm text-gray-400">
-          <p>© Exodia '25, IIT Mandi | Made with <span className="text-[#BB0000]">❤️</span> by Web Dev Team</p>
+        {/* Bottom Bar */}
+        <div className="mt-8 sm:mt-12 pt-6 sm:pt-8 border-t border-[#BB0000]/20">
+          <div className="flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
+            <p className="text-gray-400 text-sm sm:text-base">
+              © 2024 Exodia. All rights reserved.
+            </p>
+            <div className="flex space-x-4 sm:space-x-6">
+              <Link 
+                href="/privacy" 
+                className="text-gray-400 hover:text-[#BB0000] transition-colors text-sm sm:text-base"
+              >
+                Privacy Policy
+              </Link>
+              <Link 
+                href="/terms" 
+                className="text-gray-400 hover:text-[#BB0000] transition-colors text-sm sm:text-base"
+              >
+                Terms of Service
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
     </footer>
