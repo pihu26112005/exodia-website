@@ -52,7 +52,7 @@ export default function HorrorLogo() {
         {/* Logo container with custom aspect ratio */}
         <div className="relative aspect-[2.5/1] w-full mb-32">
           <Image
-            src="/assets/exodialogo.png"
+            src="/Exodiaa.PNG"
             alt="Exodia 2025"
             fill
             style={{ objectFit: 'cover', objectPosition: 'center 40%' }}

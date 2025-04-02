@@ -1,13 +1,13 @@
 'use client';
 
 import Link from 'next/link'
-import Image from 'next/image'
 import { useRef, useEffect } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import Card from './components/Card';
 import About_VideoSection from './components/About_VideoSection';
 import TextRevealAnimation from './components/TextRevealAnimation';
 import HorrorLogo from './components/HorrorLogo';
+import Image from 'next/image';
 
 
 // Dummy image data for horizontal scroll
@@ -51,13 +51,13 @@ export default function Home() {
     return textZoomToVideoeasedScrollProgress;
   };
 
-  
+
   const targetRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: targetRef,
     offset: ['start end', 'end start']
   });
-  
+
   // Transform scroll progress into horizontal movement
   const x = useTransform(scrollYProgress, [0, 1], ['0%', '-80%']);
 
@@ -73,41 +73,41 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative py-12 sm:py-20 overflow-hidden">
         <div className="absolute inset-0 bg-[url('/blood-splatter.png')] opacity-10 mix-blend-multiply"></div>
-        
+
         <div className="container mx-auto px-4 sm:px-8 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
-            <motion.h1 
+            <motion.h1
               className="text-4xl sm:text-6xl md:text-7xl font-extrabold mb-4 sm:mb-6 text-white blood-drip"
               initial={{ opacity: 0, y: -50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              EXODIA <span className="text-[#BB0000]">'25</span>
+              EXODIA <span className="text-[#BB0000]">&#39;25</span>
             </motion.h1>
-            <motion.p 
+            <motion.p
               className="text-lg sm:text-xl md:text-2xl mb-8 sm:mb-10 text-gray-300"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.3 }}
             >
               Enter the darkness. Experience the thrill. <br className="hidden sm:block" />
-              IIT Mandi's annual technical and cultural fest.
+              IIT Mandi&#39;s annual technical and cultural fest.
             </motion.p>
-            <motion.div 
+            <motion.div
               className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.5 }}
             >
-              <Link 
-                href="/events" 
-                className="px-6 sm:px-8 py-3 bg-[#BB0000] text-white border border-[#BB0000] hover:bg-transparent hover:text-[#FF0000] transition-all duration-300 shadow-lg shadow-[#BB0000]/20"
+              <Link
+                href="/events"
+                className="px-6 sm:px-8 py-3 rounded-2xl bg-[#BB0000] text-white border border-[#BB0000] hover:bg-transparent hover:text-[#FF0000] transition-all duration-300 shadow-lg shadow-[#BB0000]/20"
               >
                 Explore Events
               </Link>
-              <Link 
+              <Link
                 href="/join"
-                className="px-6 sm:px-8 py-3 bg-transparent text-white border border-[#BB0000] hover:bg-[#BB0000]/10 transition-all duration-300"
+                className="px-6 sm:px-8 py-3 rounded-2xl bg-transparent text-white border border-[#BB0000] hover:bg-[#BB0000]/10 transition-all duration-300"
               >
                 Register Now
               </Link>
@@ -115,11 +115,51 @@ export default function Home() {
           </div>
         </div>
       </section>
+      {/* merch section  */}
+      <div className="flex flex-col justify-center py-12 sm:py-16 bg-[#050505]">
+        <motion.h2
+          className="text-3xl sm:text-4xl font-bold mb-8 sm:mb-12 text-center text-white"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}>
+          Grab Your <span className="text-[#BB0000]">Merch</span>
+        </motion.h2>
+
+        <div className="grid grid-cols-4 gap-2 max-lg:gap-1 max-md:grid-cols-2 max-sm:grid-cols-2 mx-auto">
+          {["/merch/m1.png", "/merch/m2.png", "/merch/m3.png", "/merch/m4.png"].map((src, index) => (
+            <motion.div
+              key={index}
+              className="bg-[#0A0A0A] rounded-2xl border-2 border-[#BB0000]/30 group hover:border-[#BB0000] transition-all duration-300"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              viewport={{ once: true }}
+            >
+              <div className="relative h-[35rem] w-[28rem] max-[400px]:h-[14rem] max-[400px]:w-[10rem] max-md:h-[18rem] max-md:w-[16rem] max-lg:h-[20rem] max-lg:w-[15rem] max-2xl:h-[30rem] max-2xl:w-[21rem] overflow-hidden rounded-2xl mx-auto group">
+                {/* Image */}
+                <Image
+                  src={src}
+                  width={500}
+                  height={500}
+                  alt={`Merch ${index + 1}`}
+                  className="object-cover w-full h-full rounded-2xl transition-all duration-300"
+                />
+
+                {/* Red-Dark Overlay Effect */}
+                <div className="absolute inset-0  bg-black/40 opacity-80 group-hover:opacity-100 transition-all duration-300"></div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+      </div>
+
 
       {/* Featured Events Section */}
       <section className="py-12 sm:py-16 bg-[#050505]">
         <div className="container mx-auto px-4 sm:px-8">
-          <motion.h2 
+          <motion.h2
             className="text-3xl sm:text-4xl font-bold mb-8 sm:mb-12 text-center text-white"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -128,67 +168,129 @@ export default function Home() {
           >
             Featured <span className="text-[#BB0000]">Events</span>
           </motion.h2>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {/* Event Card 1 */}
-            <motion.div 
-              className="bg-[#0A0A0A] border border-[#BB0000]/30 group hover:border-[#BB0000] transition-all duration-300"
+            <motion.div
+              className="bg-[#0A0A0A] rounded-2xl border border-[#BB0000]/30 group hover:border-[#BB0000] transition-all duration-300"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
               viewport={{ once: true }}
             >
               <div className="relative h-60 overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-60 z-10"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-60 z-10">
+                  <Image
+                    className="object-cover rounded-2xl"
+                    src="/events/cosplay.png"
+                    alt="Cosplay Event"
+                    fill
+                    style={{ objectFit: "cover" }}
+                  />
+                </div>
                 <div className="absolute inset-0 bg-[#BB0000]/20 opacity-0 group-hover:opacity-100 transition-all duration-300 z-20"></div>
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-bold mb-2 text-white group-hover:text-[#BB0000] transition-all duration-300">Haunted Hackathon</h3>
-                <p className="text-gray-400 mb-4">Code through the night with challenges inspired by your darkest nightmares.</p>
+                <h3 className="text-xl font-bold mb-2 text-white group-hover:text-[#BB0000] transition-all duration-300">cosplay</h3>
+                <p className="text-gray-400 mb-4">Dress up as your favorite characters from movies, anime, or games.</p>
                 <Link href="/events/hackathon" className="text-[#BB0000] hover:underline">Learn more →</Link>
               </div>
             </motion.div>
-            
+
             {/* Event Card 2 */}
-            <motion.div 
-              className="bg-[#0A0A0A] border border-[#BB0000]/30 group hover:border-[#BB0000] transition-all duration-300"
+            <motion.div
+              className="bg-[#0A0A0A] rounded-2xl border border-[#BB0000]/30 group hover:border-[#BB0000] transition-all duration-300"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
             >
               <div className="relative h-60 overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-60 z-10"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-60 z-10">
+                  <Image
+                    className="object-cover rounded-2xl"
+                    src="/events/cosplay.png"
+                    alt="Cosplay Event"
+                    fill
+                    style={{ objectFit: "cover" }}
+                  />
+                </div>
                 <div className="absolute inset-0 bg-[#BB0000]/20 opacity-0 group-hover:opacity-100 transition-all duration-300 z-20"></div>
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-bold mb-2 text-white group-hover:text-[#BB0000] transition-all duration-300">Blood Moon Concert</h3>
-                <p className="text-gray-400 mb-4">Experience the most thrilling musical performances under the crimson night sky.</p>
+                <h3 className="text-xl font-bold mb-2 text-white group-hover:text-[#BB0000] transition-all duration-300">Cultural Night</h3>
+                <p className="text-gray-400 mb-4">A spectacular showcase of dance, music, and theatrical performances.</p>
                 <Link href="/events/concert" className="text-[#BB0000] hover:underline">Learn more →</Link>
               </div>
             </motion.div>
-            
+
             {/* Event Card 3 */}
-            <motion.div 
-              className="bg-[#0A0A0A] border border-[#BB0000]/30 group hover:border-[#BB0000] transition-all duration-300"
+            <motion.div
+              className="bg-[#0A0A0A] rounded-2xl border border-[#BB0000]/30 group hover:border-[#BB0000] transition-all duration-300"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
               viewport={{ once: true }}
             >
               <div className="relative h-60 overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-60 z-10"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-60 z-10">
+                  <Image
+                    className="object-cover rounded-2xl"
+                    src="/events/cosplay.png"
+                    alt="Cosplay Event"
+                    fill
+                    style={{ objectFit: "cover" }}
+                  />
+                </div>
                 <div className="absolute inset-0 bg-[#BB0000]/20 opacity-0 group-hover:opacity-100 transition-all duration-300 z-20"></div>
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-bold mb-2 text-white group-hover:text-[#BB0000] transition-all duration-300">Nightmare Robotics</h3>
-                <p className="text-gray-400 mb-4">Build mechanical horrors in this spine-chilling robotics competition.</p>
+                <h3 className="text-xl font-bold mb-2 text-white group-hover:text-[#BB0000] transition-all duration-300">Fashion Inferno</h3>
+                <p className="text-gray-400 mb-4">Where style meets darkness in a stunning display of fashion and creativity.</p>
                 <Link href="/events/robotics" className="text-[#BB0000] hover:underline">Learn more →</Link>
               </div>
             </motion.div>
           </div>
         </div>
       </section>
+
+
+      {/* campus embasseder  */}
+      <div className="flex flex-col items-center justify-center py-12 sm:py-16 bg-[#050505] text-center">
+        {/* Animated Heading */}
+        <motion.h2
+          className="text-3xl sm:text-4xl font-bold mb-6 sm:mb-8 text-white"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+        >
+          Become a <span className="text-[#BB0000]">Campus Ambassador</span>
+        </motion.h2>
+
+        {/* Subtitle */}
+        <p className="text-lg sm:text-xl text-gray-300 max-w-2xl px-6 mb-6">
+          Represent <span className="text-[#BB0000] font-semibold">Exodia</span> at your campus and get a chance to become an official representative of Exodia!
+        </p>
+
+        {/* Button */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.5 }}
+        >
+          <Link
+            href="/campus-ambassador"
+            className="px-6 sm:px-8 py-3 rounded-2xl bg-[#BB0000] text-white border border-[#BB0000] hover:bg-transparent hover:text-[#FF0000] transition-all duration-300 shadow-lg shadow-[#BB0000]/20"
+          >
+            Become Ambassador
+          </Link>
+        </motion.div>
+      </div>
+
+
+
+
 
       {/* Horizontal Scrolling Section */}
       <div className="mt-20 max-sm:mt-8 rotate-[3deg] max-sm:rotate-0">
@@ -213,10 +315,10 @@ export default function Home() {
         </div>
       </div>
 
-        <TextRevealAnimation />
+      <TextRevealAnimation />
 
       {/* Previous Artists Showcase */}
-      <section className="py-16 sm:py-24 bg-[#030303] relative overflow-hidden">
+      {/* <section className="py-16 sm:py-24 bg-[#030303] relative overflow-hidden">
         <div className="absolute inset-0 bg-[url('/blood-splatter.png')] opacity-10 mix-blend-multiply"></div>
         
         <div className="container mx-auto px-4">
@@ -230,7 +332,6 @@ export default function Home() {
             Previous <span className="text-[#BB0000]">Star Attractions</span>
           </motion.h2>
 
-          {/* Artist Parallax Container */}
           <motion.div 
             className="artists-container relative h-[70vh] sm:h-[90vh] perspective-[1200px]"
             style={{ 
@@ -239,7 +340,6 @@ export default function Home() {
               willChange: "transform"
             }}
           >
-            {/* Artist Cards */}
             {[
               { image: "https://a64j3m5x58.ufs.sh/f/XmKfJ6hWnfg8OzvaoCZAVZirtFvpze2T4jfB9k1RaSXCLubx", depth: 0.8 },
               { image: "https://a64j3m5x58.ufs.sh/f/XmKfJ6hWnfg81E4rQi0dFuSj7PyAlmGUCN6WXqKIfTRJibEM", depth: 0.4 },
@@ -308,7 +408,6 @@ export default function Home() {
             })}
           </motion.div>
 
-          {/* Simpler Blood splatter overlay with reduced parallax */}
           <motion.div
             className="absolute inset-0 pointer-events-none"
             style={{ 
@@ -326,7 +425,6 @@ export default function Home() {
             }}
           />
 
-          {/* Floating pentagram elements */}
           <motion.div 
             className="absolute top-1/4 left-1/4 w-20 h-20 opacity-20"
             style={{ 
@@ -361,14 +459,14 @@ export default function Home() {
             }}
           />
         </div>
-      </section>
+      </section> */}
 
       {/* Call to Action */}
       <div className="relative z-50 mt-[-10vh] sm:mt-[-20vh]">
         <section className="py-12 sm:py-20 bg-[#080808] relative z-10">
           <div className="absolute inset-0 bg-[url('/pentagram.png')] bg-center opacity-5 mix-blend-overlay pointer-events-none"></div>
           <div className="container mx-auto px-4 sm:px-8 text-center relative z-20">
-            <motion.h2 
+            <motion.h2
               className="text-3xl sm:text-4xl font-bold mb-4 sm:mb-6 text-white"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -377,7 +475,7 @@ export default function Home() {
             >
               Ready to <span className="text-[#BB0000]">Join</span> the Horror?
             </motion.h2>
-            <motion.p 
+            <motion.p
               className="text-lg sm:text-xl text-gray-400 mb-8 sm:mb-10 max-w-2xl mx-auto"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -393,7 +491,7 @@ export default function Home() {
               viewport={{ once: true }}
               className="relative z-30"
             >
-              <Link 
+              <Link
                 href="/join"
                 className="inline-block px-8 sm:px-10 py-3 sm:py-4 bg-[#BB0000] text-white text-base sm:text-lg border border-[#BB0000] hover:bg-transparent hover:text-[#FF0000] transition-all duration-300 shadow-xl shadow-[#BB0000]/20"
                 style={{ position: 'relative', zIndex: 999 }}
