@@ -2,31 +2,26 @@
 import { motion } from 'framer-motion';
 import ParallaxEventCard from '../components/ParallaxEventCard';
 import FlipEventCard from '../components/FlipEventCard';
+import { getCloudinaryImageUrl } from '@/lib/cloudinary';
 
 const mainEvents = [
   {
     id: 'cosplay',
     title: 'Cosplay',
     description: 'Dress up as your favorite characters from movies, anime, or games. Special categories for horror and fantasy characters.',
-    image: '/events/cosplay.png',
-    date: 'March 15',
-    prize: 'Star Performance',
+    image: getCloudinaryImageUrl('cosplay_duww3q'),
     rulebook: '/rulebooks/cosplay.pdf'
   },
   {
-    id: 'cultural-night',
-    title: 'Cultural Night',
-    description: 'A spectacular showcase of dance, music, and theatrical performances.',
-    image: '/events/cultural.jpg',
-    date: 'March 16',
-    prize: 'Grand Show',
-    rulebook: '/rulebooks/cultural.pdf'
+    id: 'mr-ms-exodia',
+    title: 'Mr & Ms Exodia',
+    image: getCloudinaryImageUrl('IMG_20250328_021755_238_1_pspsxa'),
   },
   {
     id: 'fashion-show',
     title: 'Fashion Inferno',
     description: 'Where style meets darkness in a stunning display of fashion and creativity.',
-    image: '/events/fashion.jpg',
+    image: getCloudinaryImageUrl('fashion_duww3q'),
     date: 'March 17',
     prize: '₹50,000',
     rulebook: '/rulebooks/fashion.pdf'
@@ -40,7 +35,7 @@ const events = [
     title: 'Battle of Bands',
     category: 'Music',
     description: 'Showcase your musical talent in this epic battle of bands.',
-    image: '/events/BattleOfBands.png',
+    image: getCloudinaryImageUrl('battle-of-bands_duww3q'),
     rulebook: '/rulebooks/battle-of-bands.pdf',
     details: 'Compete in various categories including rock, metal, and fusion. Solo and group performances welcome. Winners get a chance to perform at the Pro Nite.'
   },
@@ -49,7 +44,7 @@ const events = [
     title: 'Solo Dance',
     category: 'Dance',
     description: 'Let your moves tell a story in this solo dance competition.',
-    image: '/events/solo dance.png',
+    image: getCloudinaryImageUrl('solo-dance_duww3q'),
     rulebook: '/rulebooks/solo-dance.pdf',
     details: 'Showcase your individual dance style in various categories including contemporary, hip-hop, and classical. Special horror theme category with exciting prizes.'
   },
@@ -58,7 +53,7 @@ const events = [
     title: 'Nukkad Natak',
     category: 'Theatre',
     description: 'Street plays that speak to the soul.',
-    image: '/events/nukkadnatak.png',
+    image: getCloudinaryImageUrl('nukkad-natak_duww3q'),
     rulebook: '/rulebooks/nukkad-natak.pdf',
     details: 'Stage powerful street plays that address social issues and entertain the audience. Special emphasis on horror and thriller themes.'
   },
@@ -67,7 +62,7 @@ const events = [
     title: 'Face Painting',
     category: 'Fine Arts',
     description: 'Transform faces into works of art.',
-    image: '/events/Face Painting.png',
+    image: getCloudinaryImageUrl('face-painting_duww3q'),
     rulebook: '/rulebooks/face-painting.pdf',
     details: 'Showcase your artistic skills in face painting with special categories for horror and fantasy themes. All materials will be provided.'
   },
@@ -76,7 +71,7 @@ const events = [
     title: 'Mushaira',
     category: 'Literary',
     description: 'An evening of poetic expressions.',
-    image: '/events/Mushaira.png',
+    image: getCloudinaryImageUrl('mushaira_duww3q'),
     rulebook: '/rulebooks/mushaira.pdf',
     details: 'Compete in Urdu and Hindi poetry competitions. Special midnight poetry session under the stars with horror and thriller themes.'
   },
@@ -85,7 +80,7 @@ const events = [
     title: 'Shutter Stories',
     category: 'Photography',
     description: 'Capture moments that tell a thousand stories.',
-    image: '/events/Shutter Stories.png',
+    image: getCloudinaryImageUrl('shutter-stories_duww3q'),
     rulebook: '/rulebooks/shutter-stories.pdf',
     details: 'Photography competition with themes of horror, night life, and abstract. Special workshops on night photography and editing.'
   },
@@ -94,7 +89,7 @@ const events = [
     title: 'Stand Up Comedy',
     category: 'Comedy',
     description: 'Laugh your way through the night.',
-    image: '/events/stand up.png',
+    image: getCloudinaryImageUrl('stand-up_duww3q'),
     rulebook: '/rulebooks/stand-up.pdf',
     details: 'Showcase your comedic talent in this stand-up comedy competition. Special categories for dark humor and horror comedy.'
   },
@@ -103,7 +98,7 @@ const events = [
     title: 'Cosplay',
     category: 'Fashion',
     description: 'Bring your favorite characters to life.',
-    image: '/events/cosplay.png',
+    image: getCloudinaryImageUrl('cosplay_duww3q'),
     rulebook: '/rulebooks/cosplay.pdf',
     details: 'Dress up as your favorite characters from movies, anime, or games. Special categories for horror and fantasy characters.'
   },
@@ -112,7 +107,7 @@ const events = [
     title: 'Ambassador',
     category: 'Personality',
     description: 'Be the face of Exodia.',
-    image: '/events/ambassodooor.png',
+    image: getCloudinaryImageUrl('ambassador_duww3q'),
     rulebook: '/rulebooks/ambassador.pdf',
     details: 'Showcase your personality, communication skills, and leadership qualities. Winners will represent Exodia in various events.'
   }
