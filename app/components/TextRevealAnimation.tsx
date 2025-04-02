@@ -1,7 +1,6 @@
 'use client';
 
 import { useRef, useEffect } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
 
 const TextRevealAnimation = () => {
     const textZoomToVideocontainer = useRef<HTMLDivElement>(null);

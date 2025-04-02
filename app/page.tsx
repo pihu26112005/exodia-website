@@ -1,16 +1,13 @@
 'use client';
-
 import Link from 'next/link'
 import Image from 'next/image'
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect, useCallback } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import Card from './components/Card';
 import About_VideoSection from './components/About_VideoSection';
 import TextRevealAnimation from './components/TextRevealAnimation';
 import HorrorLogo from './components/HorrorLogo';
 
-
-// Dummy image data for horizontal scroll
 const horiscrollimage = [
   '/event1.jpg',
   '/event2.jpg',
@@ -23,24 +20,14 @@ const horiscrollimage = [
 ];
 
 export default function Home() {
-
   const textZoomToVideocontainer = useRef<HTMLDivElement>(null);
   const textZoomToVideostickyMask = useRef<HTMLDivElement>(null);
   const textZoomToVideoinitialMaskSize = 0.4;
   const textZoomToVideotargetMaskSize = 70;
   const textZoomToVideoeasing = 0.1;
   let textZoomToVideoeasedScrollProgress = 0;
-  useEffect(() => {
-    requestAnimationFrame(animate);
-  }, []);
-  const animate = () => {
-    if (!textZoomToVideostickyMask.current || !textZoomToVideocontainer.current) return;
 
-    const maskSizeProgress = textZoomToVideotargetMaskSize * getScrollProgress();
-    textZoomToVideostickyMask.current.style.webkitMaskSize = `${(textZoomToVideoinitialMaskSize + maskSizeProgress) * 100}%`;
-    requestAnimationFrame(animate);
-  };
-  const getScrollProgress = () => {
+  const getScrollProgress = useCallback(() => {
     if (!textZoomToVideostickyMask.current || !textZoomToVideocontainer.current) return 0;
 
     const scrollProgress =
@@ -50,9 +37,20 @@ export default function Home() {
     textZoomToVideoeasedScrollProgress += delta * textZoomToVideoeasing;
 
     return textZoomToVideoeasedScrollProgress;
-  };
+  }, [textZoomToVideoeasing]);
 
-  
+  const animate = useCallback(() => {
+    if (!textZoomToVideostickyMask.current || !textZoomToVideocontainer.current) return;
+
+    const maskSizeProgress = textZoomToVideotargetMaskSize * getScrollProgress();
+    textZoomToVideostickyMask.current.style.webkitMaskSize = `${(textZoomToVideoinitialMaskSize + maskSizeProgress) * 100}%`;
+    requestAnimationFrame(animate);
+  }, [getScrollProgress]);
+
+  useEffect(() => {
+    requestAnimationFrame(animate);
+  }, [animate]);
+
   const targetRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: targetRef,
@@ -67,6 +65,18 @@ export default function Home() {
     // This is just a placeholder effect - in a real app, you'd have actual images
     console.log('Component mounted');
   }, []);
+
+  // Move the scroll hooks outside of the map callback
+  const sharedScrollYProgress = useScroll({
+    target: targetRef,
+    offset: ["start end", "end start"]
+  }).scrollYProgress;
+  
+  const y = useTransform(
+    sharedScrollYProgress, 
+    [0, 1], 
+    [20, -20]
+  );
 
   return (
     <div className="min-h-screen" ref={targetRef}>
@@ -83,7 +93,7 @@ export default function Home() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              EXODIA <span className="text-[#BB0000]">'25</span>
+              EXODIA <span className="text-[#BB0000]">&apos;25</span>
             </motion.h1>
             <motion.p 
               className="text-lg sm:text-xl md:text-2xl mb-8 sm:mb-10 text-gray-300"
@@ -92,7 +102,7 @@ export default function Home() {
               transition={{ duration: 0.8, delay: 0.3 }}
             >
               Enter the darkness. Experience the thrill. <br className="hidden sm:block" />
-              IIT Mandi's annual technical and cultural fest.
+              IIT Mandi&apos;s annual technical and cultural fest.
             </motion.p>
             <motion.div 
               className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6"
@@ -249,17 +259,6 @@ export default function Home() {
               { image: "https://a64j3m5x58.ufs.sh/f/XmKfJ6hWnfg81E4rQi0dFuSj7PyAlmGUCN6WXqKIfTRJibEM", depth: 0.7 },
               { image: "https://a64j3m5x58.ufs.sh/f/XmKfJ6hWnfg81E4rQi0dFuSj7PyAlmGUCN6WXqKIfTRJibEM", depth: 0.5 }
             ].map((artist, index) => {
-              const sharedScrollYProgress = useScroll({
-                target: targetRef,
-                offset: ["start end", "end start"]
-              }).scrollYProgress;
-              
-              const y = useTransform(
-                sharedScrollYProgress, 
-                [0, 1], 
-                [20, -20]
-              );
-              
               return (
                 <motion.div
                   key={index}
