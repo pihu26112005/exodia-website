@@ -17,11 +17,7 @@ interface ParallaxEventCardProps {
 
 export default function ParallaxEventCard({
   title,
-  description,
   image,
-  date,
-  prize,
-  rulebook,
   index,
 }: ParallaxEventCardProps) {
   const cardRef = useRef<HTMLDivElement>(null);
@@ -56,7 +52,7 @@ export default function ParallaxEventCard({
       style={{ y, rotate, scale }}
       className="relative group"
     >
-      <div className="relative h-[500px] bg-[#0A0A0A] rounded-lg overflow-hidden">
+      <div className="relative h-[500px] w-[400px] bg-[#0A0A0A] rounded-lg overflow-hidden">
         {/* Background Image with Parallax */}
         <div className="absolute inset-0 transform group-hover:scale-110 transition-transform duration-700">
           <Image
@@ -66,7 +62,7 @@ export default function ParallaxEventCard({
             className="object-cover"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-80"></div>
+          <div className="absolute inset-0 bg-gradient-to-t h-[500px] w-[400px] from-black via-black/50 to-transparent opacity-80"></div>
         </div>
 
         {/* Glowing Border Effect */}
@@ -80,22 +76,15 @@ export default function ParallaxEventCard({
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <h3 className="text-3xl font-bold text-white mb-4 transform group-hover:translate-y-[-10px] transition-transform duration-500">
+          { <h3 className="text-3xl font-bold text-white mb-4 transform group-hover:translate-y-[-10px] transition-transform duration-500">
             {title}
-          </h3>
-          <p className="text-gray-300 mb-6 transform group-hover:translate-y-[-10px] transition-transform duration-500 delay-75">
-            {description}
-          </p>
-          <div className="flex items-center justify-between text-sm mb-6 transform group-hover:translate-y-[-10px] transition-transform duration-500 delay-100">
-            <span className="text-[#BB0000] font-semibold">{date}</span>
-            <span className="text-white bg-[#BB0000]/20 px-4 py-1 rounded-full">{prize}</span>
-          </div>
-          <Link 
-            href={rulebook}
+          </h3> }
+          { <Link 
+            href={"https://drive.google.com/drive/u/0/mobile/folders/1HDTET2hSR5IvnvghrGC3aAaegtsq3pGS?usp=drive_link"}
             className="inline-block w-full text-center px-6 py-3 bg-[#BB0000] text-white rounded-lg hover:bg-[#BB0000]/80 transform group-hover:translate-y-[-10px] transition all duration-500 delay-150"
           >
             View Rulebook
-          </Link>
+          </Link> }
         </motion.div>
 
         {/* Floating Particles */}
