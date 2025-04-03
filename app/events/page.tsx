@@ -328,7 +328,7 @@ export default function EventsPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            Main <span className="text-[#BB0000]">Events</span>
+            Flagship <span className="text-[#BB0000]">Events</span>
           </motion.h1>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -343,7 +343,6 @@ export default function EventsPage() {
         </div>
       </section>
 
-      {/* All Events Section */}
       <section className="py-16 bg-[#050505]">
         <div className="container mx-auto px-4">
           <motion.h2 
@@ -352,7 +351,7 @@ export default function EventsPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            Cultural <span className="text-[#BB0000]">Events</span>
+             <span className="text-[#BB0000]">Events</span>
           </motion.h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
