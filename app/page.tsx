@@ -92,7 +92,7 @@ export default function Home() {
               transition={{ duration: 0.8, delay: 0.3 }}
             >
               Enter the darkness. Experience the thrill. <br className="hidden sm:block" />
-              IIT Mandi&#39;s annual technical and cultural fest.
+              IIT Mandi's annual cultural fest.
             </motion.p>
             <motion.div
               className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6"
@@ -124,7 +124,7 @@ export default function Home() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}>
-          Grab Your <span className="text-[#BB0000]">Merch</span>
+          Exodia 2025's <span className="text-[#BB0000]">Merch</span>
         </motion.h2>
 
         <div className="grid grid-cols-4 gap-2 max-lg:gap-1 max-md:grid-cols-2 max-sm:grid-cols-2 mx-auto">
@@ -183,7 +183,7 @@ export default function Home() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-60 z-10">
                   <Image
                     className="object-cover rounded-2xl"
-                    src="/events/cosplay.png"
+                    src={getCloudinaryImageUrl('cosplay_duww3q')}
                     alt="Cosplay Event"
                     fill
                     style={{ objectFit: "cover" }}
@@ -281,7 +281,7 @@ export default function Home() {
           transition={{ duration: 0.8, delay: 0.5 }}
         >
           <Link
-            href="/campus-ambassador"
+            href="https://unstop.com/o/J9STo7t?utm_medium=Share&utm_source=shortUrl"
             className="px-6 sm:px-8 py-3 rounded-2xl bg-[#BB0000] text-white border border-[#BB0000] hover:bg-transparent hover:text-[#FF0000] transition-all duration-300 shadow-lg shadow-[#BB0000]/20"
           >
             Become Ambassador
@@ -483,7 +483,7 @@ export default function Home() {
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
             >
-              Experience a technical and cultural fest like never before. Register now and be part of the nightmare.
+              Experience a cultural fest like never before. Register now and be part of the nightmare.
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 30 }}

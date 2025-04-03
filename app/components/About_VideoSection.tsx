@@ -17,7 +17,7 @@ const About_VideoSection = () => {
             About <span className="text-[#BB0000]">Exodia</span>
           </h2>
           <p className="text-xl text-gray-300 mb-8">
-            Exodia is IIT Mandi's annual technical, cultural and management fest. With a blend of technical innovation and cultural extravaganza, Exodia promises an unforgettable experience in the heart of the Himalayas.
+            Exodia is IIT Mandi's annual cultural fest. With a blend of artistic expression and cultural extravaganza, Exodia promises an unforgettable experience in the heart of the Himalayas.
           </p>
         </motion.div>
         

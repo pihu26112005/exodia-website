@@ -2,34 +2,45 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 interface FlipEventCardProps {
-  event: {
-    title: string;
-    description: string;
-    image: string;
-    category: string;
-    rulebook: string;
-    details: string;
-  };
-  onImageError?: () => void;
-  imageError?: boolean;
+  title: string;
+  description: string;
+  image: string;
+  category: string;
+  rulebook: string;
+  details: string;
 }
 
 export default function FlipEventCard({
-  event,
-  onImageError,
-  imageError,
+  title,
+  description,
+  image,
+  category,
+  rulebook,
+  details,
 }: FlipEventCardProps) {
   const [isHovered, setIsHovered] = useState(false);
   const [isFlipped, setIsFlipped] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   return (
     <div 
-      className="relative h-[500px] w-[400px] perspective-[1000px] cursor-pointer"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
+      className="relative h-[500px] w-full md:w-[400px] perspective-[1000px] cursor-pointer"
+      onMouseEnter={() => !isMobile && setIsHovered(true)}
+      onMouseLeave={() => !isMobile && setIsHovered(false)}
       onClick={() => setIsFlipped(!isFlipped)}
     >
       <motion.div
@@ -42,53 +53,46 @@ export default function FlipEventCard({
           <div className="relative h-full bg-[#0A0A0A] rounded-lg overflow-hidden group">
             {/* Image and overlay */}
             <div className="relative h-full">
-              {!imageError ? (
-                <Image
-                  src={event.image}
-                  alt={event.title}
-                  fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-110"
-                  priority
-                  onError={onImageError}
-                />
-              ) : (
-                <div className="w-full h-full bg-[#1a0000] flex items-center justify-center">
-                  <span className="text-white text-xl">Image not available</span>
-                </div>
-              )}
+              <Image
+                src={image}
+                alt={title}
+                fill
+                className="object-cover transition-transform duration-500 group-hover:scale-110"
+                priority
+              />
               <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-70"></div>
             </div>
 
             {/* Content */}
             <div className="absolute inset-0 p-6 flex flex-col justify-end transform transition-all duration-300">
               <motion.div 
-                animate={isHovered ? { y: 0, opacity: 1 } : { y: 20, opacity: 0 }}
+                animate={isMobile || isHovered ? { y: 0, opacity: 1 } : { y: 20, opacity: 0 }}
                 transition={{ duration: 0.3 }}
                 className="mb-4"
               >
                 <span className="px-3 py-1 bg-[#BB0000]/60 text-[#fff] text-sm rounded-full">
-                  {event.category}
+                  {category}
                 </span>
               </motion.div>
               <motion.h3 
-                animate={isHovered ? { y: 0, opacity: 1 } : { y: 20, opacity: 0 }}
+                animate={isMobile || isHovered ? { y: 0, opacity: 1 } : { y: 20, opacity: 0 }}
                 transition={{ duration: 0.3, delay: 0.1 }}
                 className="text-2xl font-bold text-white mb-2"
               >
-                {event.title}
+                {title}
               </motion.h3>
               <motion.p 
-                animate={isHovered ? { y: 0, opacity: 1 } : { y: 20, opacity: 0 }}
+                animate={isMobile || isHovered ? { y: 0, opacity: 1 } : { y: 20, opacity: 0 }}
                 transition={{ duration: 0.3, delay: 0.2 }}
                 className="text-gray-300 text-sm"
               >
-                {event.description}
+                {description}
               </motion.p>
             </div>
 
-            {/* Click indicator */}
+            {/* Click indicator - only show on desktop */}
             <motion.div 
-              className="absolute top-4 right-4 text-white/50"
+              className="absolute top-4 right-4 text-white/50 hidden md:block"
               animate={isHovered ? { opacity: 1 } : { opacity: 0 }}
               transition={{ duration: 0.3 }}
             >
@@ -106,17 +110,24 @@ export default function FlipEventCard({
 
         {/* Back of card */}
         <div 
-          className="absolute inset-0 backface-hidden rotate-y-180 bg-[#0A0A0A] rounded-lg p-6 flex flex-col"
+          className="absolute inset-0 backface-hidden"
+          style={{ transform: 'rotateY(180deg)' }}
         >
-          <h3 className="text-2xl font-bold text-white mb-4">{event.title}</h3>
-          <p className="text-gray-300 mb-4">{event.details}</p>
-          <Link 
-            href={event.rulebook}
-            className="mt-auto self-center px-6 py-3 bg-[#BB0000] text-white rounded-lg hover:bg-[#BB0000]/80 transition-colors duration-300"
-          >
-            View Rulebook
-          </Link>
+          <div className="h-full bg-[#0A0A0A] rounded-lg p-6 flex flex-col">
+            <h3 className="text-2xl font-bold text-white mb-4">{title}</h3>
+            <p className="text-gray-300 mb-6 flex-grow">{details}</p>
+            <Link 
+              href={rulebook}
+              className="w-full text-center px-6 py-3 bg-[#BB0000] text-white rounded-lg hover:bg-[#BB0000]/80 transition-colors duration-300"
+              onClick={(e) => e.stopPropagation()}
+            >
+              View Rulebook
+            </Link>
+          </div>
         </div>
+
+        {/* Border Effect - only on desktop */}
+        <div className="absolute inset-0 border border-[#BB0000]/0 group-hover:border-[#BB0000] transition-colors duration-300 pointer-events-none rounded-lg hidden md:block"></div>
       </motion.div>
     </div>
   );

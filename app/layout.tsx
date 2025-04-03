@@ -13,7 +13,7 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: "Exodia '25 | IIT Mandi",
-  description: "The annual technical, cultural and management fest of IIT Mandi",
+  description: "The annual cultural fest of IIT Mandi",
 };
 
 export default function RootLayout({
