@@ -8,6 +8,7 @@ import About_VideoSection from './components/About_VideoSection';
 import TextRevealAnimation from './components/TextRevealAnimation';
 import HorrorLogo from './components/HorrorLogo';
 import Image from 'next/image';
+import { getCloudinaryImageUrl } from '@/lib/cloudinary';
 
 
 // Dummy image data for horizontal scroll
@@ -209,7 +210,7 @@ export default function Home() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-60 z-10">
                   <Image
                     className="object-cover rounded-2xl"
-                    src="/events/cosplay.png"
+                    src={getCloudinaryImageUrl('IMG_20250328_021755_238_1_pspsxa')}
                     alt="Cosplay Event"
                     fill
                     style={{ objectFit: "cover" }}
@@ -218,9 +219,9 @@ export default function Home() {
                 <div className="absolute inset-0 bg-[#BB0000]/20 opacity-0 group-hover:opacity-100 transition-all duration-300 z-20"></div>
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-bold mb-2 text-white group-hover:text-[#BB0000] transition-all duration-300">Cultural Night</h3>
-                <p className="text-gray-400 mb-4">A spectacular showcase of dance, music, and theatrical performances.</p>
-                <Link href="/events/concert" className="text-[#BB0000] hover:underline">Learn more →</Link>
+                <h3 className="text-xl font-bold mb-2 text-white group-hover:text-[#BB0000] transition-all duration-300">Mr. and Ms. Exodia</h3>
+                <p className="text-gray-400 mb-4">Compete and show off your talent.</p>
+                <Link href="/events/mr-and-ms-exodia" className="text-[#BB0000] hover:underline">Learn more →</Link>
               </div>
             </motion.div>
 
@@ -236,8 +237,8 @@ export default function Home() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-60 z-10">
                   <Image
                     className="object-cover rounded-2xl"
-                    src="/events/cosplay.png"
-                    alt="Cosplay Event"
+                    src={getCloudinaryImageUrl('MUNSC_phzxmr')}
+                    alt="MUNSC Event"
                     fill
                     style={{ objectFit: "cover" }}
                   />
@@ -245,8 +246,8 @@ export default function Home() {
                 <div className="absolute inset-0 bg-[#BB0000]/20 opacity-0 group-hover:opacity-100 transition-all duration-300 z-20"></div>
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-bold mb-2 text-white group-hover:text-[#BB0000] transition-all duration-300">Fashion Inferno</h3>
-                <p className="text-gray-400 mb-4">Where style meets darkness in a stunning display of fashion and creativity.</p>
+                <h3 className="text-xl font-bold mb-2 text-white group-hover:text-[#BB0000] transition-all duration-300">MUNSC</h3>
+                <p className="text-gray-400 mb-4">A thrilling simulation of the United Nations Security Council.</p>
                 <Link href="/events/robotics" className="text-[#BB0000] hover:underline">Learn more →</Link>
               </div>
             </motion.div>
