@@ -358,7 +358,7 @@ export default function EventsPage() {
             {events.map((event) => (
               <FlipEventCard
                 key={event.id}
-                {...event}
+                event={event}
               />
             ))}
           </div>

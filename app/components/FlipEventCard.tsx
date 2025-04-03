@@ -5,21 +5,22 @@ import Link from 'next/link';
 import { useState } from 'react';
 
 interface FlipEventCardProps {
-  title: string;
-  description: string;
-  image: string;
-  category: string;
-  rulebook: string;
-  details: string;
+  event: {
+    title: string;
+    description: string;
+    image: string;
+    category: string;
+    rulebook: string;
+    details: string;
+  };
+  onImageError?: () => void;
+  imageError?: boolean;
 }
 
 export default function FlipEventCard({
-  title,
-  description,
-  image,
-  category,
-  rulebook,
-  details,
+  event,
+  onImageError,
+  imageError,
 }: FlipEventCardProps) {
   const [isHovered, setIsHovered] = useState(false);
   const [isFlipped, setIsFlipped] = useState(false);
@@ -41,13 +42,20 @@ export default function FlipEventCard({
           <div className="relative h-full bg-[#0A0A0A] rounded-lg overflow-hidden group">
             {/* Image and overlay */}
             <div className="relative h-full">
-              <Image
-                src={image}
-                alt={title}
-                fill
-                className="object-cover transition-transform duration-500 group-hover:scale-110"
-                priority
-              />
+              {!imageError ? (
+                <Image
+                  src={event.image}
+                  alt={event.title}
+                  fill
+                  className="object-cover transition-transform duration-500 group-hover:scale-110"
+                  priority
+                  onError={onImageError}
+                />
+              ) : (
+                <div className="w-full h-full bg-[#1a0000] flex items-center justify-center">
+                  <span className="text-white text-xl">Image not available</span>
+                </div>
+              )}
               <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-70"></div>
             </div>
 
@@ -59,7 +67,7 @@ export default function FlipEventCard({
                 className="mb-4"
               >
                 <span className="px-3 py-1 bg-[#BB0000]/60 text-[#fff] text-sm rounded-full">
-                  {category}
+                  {event.category}
                 </span>
               </motion.div>
               <motion.h3 
@@ -67,14 +75,14 @@ export default function FlipEventCard({
                 transition={{ duration: 0.3, delay: 0.1 }}
                 className="text-2xl font-bold text-white mb-2"
               >
-                {title}
+                {event.title}
               </motion.h3>
               <motion.p 
                 animate={isHovered ? { y: 0, opacity: 1 } : { y: 20, opacity: 0 }}
                 transition={{ duration: 0.3, delay: 0.2 }}
                 className="text-gray-300 text-sm"
               >
-                {description}
+                {event.description}
               </motion.p>
             </div>
 
@@ -98,24 +106,17 @@ export default function FlipEventCard({
 
         {/* Back of card */}
         <div 
-          className="absolute inset-0 backface-hidden"
-          style={{ transform: 'rotateY(180deg)' }}
+          className="absolute inset-0 backface-hidden rotate-y-180 bg-[#0A0A0A] rounded-lg p-6 flex flex-col"
         >
-          <div className="h-full bg-[#0A0A0A] rounded-lg p-6 flex flex-col">
-            <h3 className="text-2xl font-bold text-white mb-4">{title}</h3>
-            <p className="text-gray-300 mb-6 flex-grow">{details}</p>
-            <Link 
-              href={rulebook}
-              className="w-full text-center px-6 py-3 bg-[#BB0000] text-white rounded-lg hover:bg-[#BB0000]/80 transition-colors duration-300"
-              onClick={(e) => e.stopPropagation()}
-            >
-              View Rulebook
-            </Link>
-          </div>
+          <h3 className="text-2xl font-bold text-white mb-4">{event.title}</h3>
+          <p className="text-gray-300 mb-4">{event.details}</p>
+          <Link 
+            href={event.rulebook}
+            className="mt-auto self-center px-6 py-3 bg-[#BB0000] text-white rounded-lg hover:bg-[#BB0000]/80 transition-colors duration-300"
+          >
+            View Rulebook
+          </Link>
         </div>
-
-        {/* Border Effect */}
-        <div className="absolute inset-0 border border-[#BB0000]/0 group-hover:border-[#BB0000] transition-colors duration-300 pointer-events-none rounded-lg"></div>
       </motion.div>
     </div>
   );
