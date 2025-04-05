@@ -11,16 +11,13 @@ import Image from 'next/image';
 import { getCloudinaryImageUrl } from '@/lib/cloudinary';
 
 
-// Dummy image data for horizontal scroll
 const horiscrollimage = [
-  '/event1.jpg',
-  '/event2.jpg',
-  '/event3.jpg',
-  '/event4.jpg',
-  '/event5.jpg',
-  '/event6.jpg',
-  '/event7.jpg',
-  '/event8.jpg',
+  '/trail/1.png',
+  '/trail/2.png',
+  '/trail/3.png',
+  '/trail/4.png',
+  '/trail/5.png',
+  '/trail/6.png',
 ];
 
 export default function Home() {
@@ -137,7 +134,7 @@ export default function Home() {
               transition={{ duration: 0.6, delay: 0.1 }}
               viewport={{ once: true }}
             >
-              <div className="relative h-[35rem] w-[28rem] max-[400px]:h-[14rem] max-[400px]:w-[10rem] max-md:h-[18rem] max-md:w-[16rem] max-lg:h-[20rem] max-lg:w-[15rem] max-2xl:h-[30rem] max-2xl:w-[2zrem] overflow-hidden rounded-2xl mx-auto group">
+              <div className="relative h-[35rem] w-full max-[400px]:h-[14rem] max-md:h-[18rem] max-lg:h-[20rem] max-2xl:h-[30rem] overflow-hidden rounded-2xl mx-auto group">
                 {/* Image */}
                 <Image
                   src={src}
@@ -146,8 +143,6 @@ export default function Home() {
                   alt={`Merch ${index + 1}`}
                   className="object-cover w-full h-full rounded-2xl transition-all duration-300"
                 />
-
-                {/* Red-Dark Overlay Effect */}
                 <div className="absolute inset-0  bg-black/40 opacity-80 group-hover:opacity-100 transition-all duration-300"></div>
               </div>
             </motion.div>
