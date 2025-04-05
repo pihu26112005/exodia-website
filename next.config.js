@@ -2,9 +2,17 @@
 const nextConfig = {
   output: 'standalone',
   images: {
-    domains: [
-      'res.cloudinary.com',
-      'a64j3m5x58.ufs.sh'
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'res.cloudinary.com',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'a64j3m5x58.ufs.sh',
+        pathname: '/**',
+      }
     ],
   },
 }
