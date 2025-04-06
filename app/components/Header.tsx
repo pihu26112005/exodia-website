@@ -8,7 +8,6 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const menuItems = [
-    { href: '/', label: 'Home' },
     { href: '/events', label: 'Events' },
     { href: '/schedule', label: 'Schedule' },
     { href: '/sponsors', label: 'Sponsors' },

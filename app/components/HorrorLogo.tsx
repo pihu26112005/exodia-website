@@ -1,5 +1,6 @@
 'use client';
 
+import { getCloudinaryImageUrl } from '@/lib/cloudinary';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
@@ -52,7 +53,7 @@ export default function HorrorLogo() {
         {/* Logo container with custom aspect ratio */}
         <div className="relative aspect-[2.5/1] w-full mb-32">
           <Image
-            src="/assets/exodia-logo.png"
+            src={getCloudinaryImageUrl('Exodia-logo_kkmley')}
             alt="Exodia 2025"
             fill
             style={{ objectFit: 'cover', objectPosition: 'center 40%' }}

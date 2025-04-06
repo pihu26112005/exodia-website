@@ -8,18 +8,16 @@ import About_VideoSection from './components/About_VideoSection';
 import TextRevealAnimation from './components/TextRevealAnimation';
 import HorrorLogo from './components/HorrorLogo';
 import Image from 'next/image';
+import { getCloudinaryImageUrl } from '@/lib/cloudinary';
 
 
-// Dummy image data for horizontal scroll
 const horiscrollimage = [
-  '/event1.jpg',
-  '/event2.jpg',
-  '/event3.jpg',
-  '/event4.jpg',
-  '/event5.jpg',
-  '/event6.jpg',
-  '/event7.jpg',
-  '/event8.jpg',
+  '/trail/1.png',
+  '/trail/2.png',
+  '/trail/3.png',
+  '/trail/4.png',
+  '/trail/5.png',
+  '/trail/6.png',
 ];
 
 export default function Home() {
@@ -91,7 +89,7 @@ export default function Home() {
               transition={{ duration: 0.8, delay: 0.3 }}
             >
               Enter the darkness. Experience the thrill. <br className="hidden sm:block" />
-              IIT Mandi&#39;s annual technical and cultural fest.
+              IIT Mandi's annual cultural fest.
             </motion.p>
             <motion.div
               className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6"
@@ -123,7 +121,7 @@ export default function Home() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}>
-          Grab Your <span className="text-[#BB0000]">Merch</span>
+          Exodia 2025's <span className="text-[#BB0000]">Merch</span>
         </motion.h2>
 
         <div className="grid grid-cols-4 gap-2 max-lg:gap-1 max-md:grid-cols-2 max-sm:grid-cols-2 mx-auto">
@@ -136,7 +134,7 @@ export default function Home() {
               transition={{ duration: 0.6, delay: 0.1 }}
               viewport={{ once: true }}
             >
-              <div className="relative h-[35rem] w-[28rem] max-[400px]:h-[14rem] max-[400px]:w-[10rem] max-md:h-[18rem] max-md:w-[16rem] max-lg:h-[20rem] max-lg:w-[15rem] max-2xl:h-[30rem] max-2xl:w-[2zrem] overflow-hidden rounded-2xl mx-auto group">
+              <div className="relative h-[35rem] w-full max-[400px]:h-[14rem] max-md:h-[18rem] max-lg:h-[20rem] max-2xl:h-[30rem] overflow-hidden rounded-2xl mx-auto group">
                 {/* Image */}
                 <Image
                   src={src}
@@ -145,8 +143,6 @@ export default function Home() {
                   alt={`Merch ${index + 1}`}
                   className="object-cover w-full h-full rounded-2xl transition-all duration-300"
                 />
-
-                {/* Red-Dark Overlay Effect */}
                 <div className="absolute inset-0  bg-black/40 opacity-80 group-hover:opacity-100 transition-all duration-300"></div>
               </div>
             </motion.div>
@@ -182,7 +178,7 @@ export default function Home() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-60 z-10">
                   <Image
                     className="object-cover rounded-2xl"
-                    src="/events/cosplay.png"
+                    src={getCloudinaryImageUrl('cosplay_duww3q')}
                     alt="Cosplay Event"
                     fill
                     style={{ objectFit: "cover" }}
@@ -209,7 +205,7 @@ export default function Home() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-60 z-10">
                   <Image
                     className="object-cover rounded-2xl"
-                    src="/events/cosplay.png"
+                    src={getCloudinaryImageUrl('IMG_20250328_021755_238_1_pspsxa')}
                     alt="Cosplay Event"
                     fill
                     style={{ objectFit: "cover" }}
@@ -218,9 +214,9 @@ export default function Home() {
                 <div className="absolute inset-0 bg-[#BB0000]/20 opacity-0 group-hover:opacity-100 transition-all duration-300 z-20"></div>
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-bold mb-2 text-white group-hover:text-[#BB0000] transition-all duration-300">Cultural Night</h3>
-                <p className="text-gray-400 mb-4">A spectacular showcase of dance, music, and theatrical performances.</p>
-                <Link href="/events/concert" className="text-[#BB0000] hover:underline">Learn more →</Link>
+                <h3 className="text-xl font-bold mb-2 text-white group-hover:text-[#BB0000] transition-all duration-300">Mr. and Ms. Exodia</h3>
+                <p className="text-gray-400 mb-4">Compete and show off your talent.</p>
+                <Link href="/events/mr-and-ms-exodia" className="text-[#BB0000] hover:underline">Learn more →</Link>
               </div>
             </motion.div>
 
@@ -236,8 +232,8 @@ export default function Home() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-60 z-10">
                   <Image
                     className="object-cover rounded-2xl"
-                    src="/events/cosplay.png"
-                    alt="Cosplay Event"
+                    src={getCloudinaryImageUrl('MUNSC_phzxmr')}
+                    alt="MUNSC Event"
                     fill
                     style={{ objectFit: "cover" }}
                   />
@@ -245,8 +241,8 @@ export default function Home() {
                 <div className="absolute inset-0 bg-[#BB0000]/20 opacity-0 group-hover:opacity-100 transition-all duration-300 z-20"></div>
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-bold mb-2 text-white group-hover:text-[#BB0000] transition-all duration-300">Fashion Inferno</h3>
-                <p className="text-gray-400 mb-4">Where style meets darkness in a stunning display of fashion and creativity.</p>
+                <h3 className="text-xl font-bold mb-2 text-white group-hover:text-[#BB0000] transition-all duration-300">MUNSC</h3>
+                <p className="text-gray-400 mb-4">A thrilling simulation of the United Nations Security Council.</p>
                 <Link href="/events/robotics" className="text-[#BB0000] hover:underline">Learn more →</Link>
               </div>
             </motion.div>
@@ -280,7 +276,7 @@ export default function Home() {
           transition={{ duration: 0.8, delay: 0.5 }}
         >
           <Link
-            href="/campus-ambassador"
+            href="https://unstop.com/o/J9STo7t?utm_medium=Share&utm_source=shortUrl"
             className="px-6 sm:px-8 py-3 rounded-2xl bg-[#BB0000] text-white border border-[#BB0000] hover:bg-transparent hover:text-[#FF0000] transition-all duration-300 shadow-lg shadow-[#BB0000]/20"
           >
             Become Ambassador
@@ -482,7 +478,7 @@ export default function Home() {
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
             >
-              Experience a technical and cultural fest like never before. Register now and be part of the nightmare.
+              Experience a cultural fest like never before. Register now and be part of the nightmare.
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 30 }}

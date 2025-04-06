@@ -15,7 +15,7 @@ const Footer = () => {
           <div className="space-y-4">
             <h3 className="text-xl sm:text-2xl font-bold text-[#BB0000]">About Exodia</h3>
             <p className="text-gray-400 text-sm sm:text-base">
-              IIT Mandi's annual technical and cultural fest, bringing together the brightest minds for an unforgettable experience.
+              IIT Mandi's annual cultural fest, bringing together creative minds for an unforgettable experience.
             </p>
           </div>
 
@@ -46,13 +46,13 @@ const Footer = () => {
             <h3 className="text-xl sm:text-2xl font-bold text-[#BB0000]">Contact Us</h3>
             <ul className="space-y-2 text-sm sm:text-base">
               <li className="text-gray-400">
-                <span className="text-[#BB0000]">Email:</span> exodia@iitmandi.ac.in
+                cultural_secretary@students.iitmandi.ac.in
               </li>
               <li className="text-gray-400">
-                <span className="text-[#BB0000]">Phone:</span> +91 1234567890
+            +91 77393 01036
               </li>
               <li className="text-gray-400">
-                <span className="text-[#BB0000]">Address:</span> IIT Mandi, Himachal Pradesh
+                 IIT Mandi, Himachal Pradesh
               </li>
             </ul>
           </div>
