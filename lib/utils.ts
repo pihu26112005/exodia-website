@@ -38,7 +38,7 @@ export const teamsList = [
         { 
           name: 'Ayush Sinha',
           photo: 'https://a64j3m5x58.ufs.sh/f/XmKfJ6hWnfg8HG0sJDWxhybz3vfeqLAQnpcSBWg6d54OMKiH',
-          heading: 'Literary Secretary',
+          heading: 'Literary Sec',
           socialMediaLinks: [
             { name: 'linkedin', link: 'https://www.linkedin.com/in/ayush-sinha-iit-mandi?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app' },
             { name: 'instagram', link: 'https://instagram.com/cultureshock_poet' },
@@ -49,7 +49,7 @@ export const teamsList = [
         { 
           name: 'Vivek Aggarwal',
           photo: 'https://a64j3m5x58.ufs.sh/f/XmKfJ6hWnfg8XSTLmChWnfg8CkBHLr7YPo4jxz6Elt0a5ucZ',
-          heading: 'Cultural Secretary',
+          heading: 'Cultural Sec',
           socialMediaLinks: [
             { name: 'linkedin', link: 'https://www.linkedin.com/in/vivek-aggarwal-b005b125a/' },
             { name: 'instagram', link: 'https://www.instagram.com/vivekaggarwal05/' },

@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import Image from 'next/image';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -45,7 +46,19 @@ const Header = () => {
           </nav>
 
           {/* Mobile Menu Button */}
-          <button
+          <div className='flex justify-center items-center'>
+            <div className='flex justify-center items-center'>
+              <Link href="https://www.instagram.com/exodia.iitmandi?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" className="text-2xl sm:text-3xl font-bold text-white hover:text-[#BB0000] transition-colors">
+              <Image 
+                src="/socialmedia/insta.png"
+                alt="Logo"
+                width={50}
+                height={50}
+                className="sm:hidden w-8 h-8 object-cover rounded-full"
+              />
+              </Link>
+            </div>
+            <button
             onClick={() => setIsOpen(!isOpen)}
             className="sm:hidden relative w-10 h-10 flex items-center justify-center"
             aria-label="Toggle menu"
@@ -65,6 +78,7 @@ const Header = () => {
               />
             </div>
           </button>
+          </div>
         </div>
 
         {/* Mobile Navigation */}
