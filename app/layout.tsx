@@ -19,35 +19,8 @@ export const metadata: Metadata = {
   description: "The annual cultural fest of IIT Mandi, where culture meets chaos!",
   keywords: ["Exodia 2025","exodia","Exodia","iit mandi","techno-cultural fest", "IIT Mandi fest", "college fest India", "cultural fest"],
   metadataBase: new URL("https://exodia-iitmandi.org/"), 
-  openGraph: {
-    title: "Exodia '25 | IIT Mandi",
-    description: "Experience the chaos, creativity, and culture at IIT Mandi!",
-    url: "https://exodia-iitmandi.org/",
-    siteName: "Exodia '25",
-    images: [
-      {
-        url: "/assets/Exodia-logo.png",
-        width: 1200,
-        height: 630,
-        alt: "Exodia 2025 banner",
-      },
-    ],
-    locale: "en_US",
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Exodia '25 | IIT Mandi",
-    description: "The ultimate cultural fest in the Himalayas.",
-    images: ["/assets/Exodia-logo.png"],
-  },
-  robots: {
-    index: true,
-    follow: true,
-    nocache: false,
-  },
   icons: {
-    icon: "/favicon.ico",
+    icon: "/exFav.PNG",
   },
 };
 

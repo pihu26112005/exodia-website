@@ -80,7 +80,7 @@ export default function Home() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              EXODIA <span className="text-[#BB0000]">&#39;25</span>
+              About <span className="text-[#BB0000]">EXODIA&#39;25</span>
             </motion.h1>
             <motion.p
               className="text-lg sm:text-xl md:text-2xl mb-8 sm:mb-10 text-gray-300"
@@ -88,8 +88,12 @@ export default function Home() {
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.3 }}
             >
-              Enter the darkness. Experience the thrill. <br className="hidden sm:block" />
-              IIT Mandi's annual cultural fest.
+              Exodia 2025 is the biggest cultural fest in the Himalayas organized by the cultural Council of IIT Mandi. It is a three-day-long event held every year.
+              The fest also tries to promote the Himalayan region and showcase its culture and beauty by orchestrating some of its events for the same.
+              the fest is a blend of cultural events, workshops, competitions, and performances by renowned artists.
+               <br className="hidden sm:block" />
+               <br className="hidden sm:block" />
+              Let the Magic begins with IIT Mandi's annual cultural fest.
             </motion.p>
             <motion.div
               className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6"
@@ -189,7 +193,7 @@ export default function Home() {
               <div className="p-6">
                 <h3 className="text-xl font-bold mb-2 text-white group-hover:text-[#BB0000] transition-all duration-300">cosplay</h3>
                 <p className="text-gray-400 mb-4">Dress up as your favorite characters from movies, anime, or games.</p>
-                <Link href="/events/hackathon" className="text-[#BB0000] hover:underline">Learn more →</Link>
+                <Link href="/events/hackathon" className="text-[#BB0000] hover:underline">Explore more →</Link>
               </div>
             </motion.div>
 
@@ -216,7 +220,7 @@ export default function Home() {
               <div className="p-6">
                 <h3 className="text-xl font-bold mb-2 text-white group-hover:text-[#BB0000] transition-all duration-300">Mr. and Ms. Exodia</h3>
                 <p className="text-gray-400 mb-4">Compete and show off your talent.</p>
-                <Link href="/events/mr-and-ms-exodia" className="text-[#BB0000] hover:underline">Learn more →</Link>
+                <Link href="/events/mr-and-ms-exodia" className="text-[#BB0000] hover:underline">Explore more →</Link>
               </div>
             </motion.div>
 
@@ -243,7 +247,7 @@ export default function Home() {
               <div className="p-6">
                 <h3 className="text-xl font-bold mb-2 text-white group-hover:text-[#BB0000] transition-all duration-300">MUNSC</h3>
                 <p className="text-gray-400 mb-4">A thrilling simulation of the United Nations Security Council.</p>
-                <Link href="/events/robotics" className="text-[#BB0000] hover:underline">Learn more →</Link>
+                <Link href="/events/robotics" className="text-[#BB0000] hover:underline">Explore more →</Link>
               </div>
             </motion.div>
           </div>
