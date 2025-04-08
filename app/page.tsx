@@ -57,7 +57,7 @@ export default function Home() {
   });
 
   // Transform scroll progress into horizontal movement
-  const x = useTransform(scrollYProgress, [0, 1], ['0%', '-80%']);
+  const x = useTransform(scrollYProgress, [0, 1], ['0%', '-40%']);
 
   // Create dummy images in public folder if they don't exist
   useEffect(() => {
@@ -289,7 +289,7 @@ export default function Home() {
 
 
       {/* Horizontal Scrolling Section */}
-      <div className="mt-20 max-sm:mt-8 rotate-[3deg] max-sm:rotate-0">
+      <div className="mt-20 mb-10 max-sm:mt-8 rotate-[3deg] max-sm:rotate-0">
         <div className="sticky top-0 flex items-center overflow-hidden">
           <motion.div style={{ x }} className="flex gap-4">
             {horiscrollimage.map((imgsrc, i) => {
@@ -489,7 +489,7 @@ export default function Home() {
             >
               <Link
                 href="/join"
-                className="inline-block px-8 sm:px-10 py-3 sm:py-4 bg-[#BB0000] text-white text-base sm:text-lg border border-[#BB0000] hover:bg-transparent hover:text-[#FF0000] transition-all duration-300 shadow-xl shadow-[#BB0000]/20"
+                className="inline-block rounded-xl px-8 sm:px-10 py-3 sm:py-4 bg-[#BB0000] text-white text-base sm:text-lg border border-[#BB0000] hover:bg-transparent hover:text-[#FF0000] transition-all duration-300 shadow-xl shadow-[#BB0000]/20"
                 style={{ position: 'relative', zIndex: 999 }}
               >
                 Register Now
