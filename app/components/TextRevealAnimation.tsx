@@ -58,10 +58,15 @@ const TextRevealAnimation = () => {
             ref={textZoomToVideostickyMask}
             className="flex overflow-hidden sticky top-0 h-screen items-center justify-center"
             style={{
+              maskImage: "url('/assets/homefifth/EXODIA.svg')",
+              maskPosition: "46% center",
+              maskRepeat: "no-repeat",
+              maskSize: "10%",
               WebkitMaskImage: "url('/assets/homefifth/EXODIA.svg')",
               WebkitMaskPosition: "46% center",
               WebkitMaskRepeat: "no-repeat",
               WebkitMaskSize: "10%",
+              
               pointerEvents: 'none',
               contain: 'paint layout size',
             }}
