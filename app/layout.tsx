@@ -5,6 +5,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import HorrorTimer from "./components/HorrorTimer";
 import PreLoader from "./components/PreLoader";
+import CanonicalTag from "./components/CanonicalTag";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -13,32 +14,58 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: "Exodia '25 | IIT Mandi",
-    template: "%s | Exodia '25",
+    default: "Exodia | IIT Mandi",
+    template: "%s | Exodia",
   },
   description: "The annual cultural fest of IIT Mandi, where culture meets chaos!",
-  keywords: ["Exodia 2025","exodia","Exodia","iit mandi","techno-cultural fest", "IIT Mandi fest", "college fest India", "cultural fest"],
-  metadataBase: new URL("https://exodia-iitmandi.org/"), 
-  icons:[{ rel: "icon", url: "/exFav.PNG" }],
+  keywords: [
+    "Exodia",
+    "Exodia IIT Mandi",
+    "Exodia 2025",
+    "iit mandi cult fest",
+    "Exodia",
+    "iit mandi",
+    "techno-cultural fest",
+    "IIT Mandi fest",
+    "college fest India",
+    "cultural fest",
+  ],
+  metadataBase: new URL("https://exodia-iitmandi.org/"),
+  icons: [{ rel: "icon", url: "/exFav.PNG" }],
+  openGraph: {
+    title: "Exodia | IIT Mandi",
+    description: "The annual cultural fest of IIT Mandi, where culture meets chaos!",
+    url: "https://exodia-iitmandi.org/",
+    siteName: "Exodia",
+    images: [
+      {
+        url: "/exodia-banner.png",
+        width: 1200,
+        height: 630,
+        alt: "Exodia 2025 Banner",
+      },
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Exodia '25 | IIT Mandi",
+    description: "The annual cultural fest of IIT Mandi, where culture meets chaos!",
+    images: ["/exodia-banner.png"],
+  },
 };
 
-
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body
-        className={`${inter.variable} font-sans antialiased min-h-screen flex flex-col bg-[#080808] relative`}
-      >
+      <head>
+        <CanonicalTag />
+      </head>
+      <body className={`${inter.variable} font-sans antialiased min-h-screen flex flex-col bg-[#080808] relative`}>
         <div className="fixed inset-0 bg-[#1a0000] -z-10" />
         <PreLoader />
         <Header />
-        <main className="flex-grow relative z-10">
-          {children}
-        </main>
+        <main className="flex-grow relative z-10">{children}</main>
         <Footer />
         <HorrorTimer />
       </body>
