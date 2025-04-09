@@ -19,9 +19,7 @@ export const metadata: Metadata = {
   description: "The annual cultural fest of IIT Mandi, where culture meets chaos!",
   keywords: ["Exodia 2025","exodia","Exodia","iit mandi","techno-cultural fest", "IIT Mandi fest", "college fest India", "cultural fest"],
   metadataBase: new URL("https://exodia-iitmandi.org/"), 
-  icons: {
-    icon: "/exFav.PNG",
-  },
+  icons:[{ rel: "icon", url: "/exFav.PNG" }],
 };
 
 
