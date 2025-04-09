@@ -23,10 +23,15 @@ const nextConfig = {
           {
             key: 'Content-Security-Policy',
             value: "frame-ancestors 'self'; frame-src 'self' https://www.youtube.com;"
+          },
+          {
+            key: 'Strict-Transport-Security',
+            value: 'max-age=63072000; includeSubDomains; preload'
           }
         ]
       }
     ];
   }
 }
+
 module.exports = nextConfig
