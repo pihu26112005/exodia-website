@@ -7,6 +7,7 @@ import { Plane, Train, Bus, MapPin, Navigation } from 'lucide-react';
 import { Modal, ModalBody, ModalContent, ModalFooter, ModalTrigger } from "../components/animated-modal";
 import { TabsDemo } from '../components/HowtoReach_DisplayTabs';
 import { CoolMode } from '../components/cool-mode';
+import FAQ from '../components/faq';
 
 
 const contacts = [
@@ -131,6 +132,11 @@ const page = () => {
 
       </div>
 
+
+      <FAQ />
+
+
+      {/* // how to reach  */}
       <div className={`min-h-screen  text-white  mt-10 max-sm:mt-6`}>
         {/* Hero Section with 3D Train */}
         <div className="relative overflow-hidden">
@@ -277,7 +283,7 @@ const page = () => {
           >
             <h2 className="mb-12 text-2xl font-bold text-white flex items-center gap-3">
               <Navigation className="w-6 h-6" />
-              Guide to IIT Mandi from Mandi
+              Guide to IIT Mandi from Mandi City
             </h2>
             <TabsDemo />
           </motion.div>
