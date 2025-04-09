@@ -13,10 +13,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: {
-    default: "Exodia | IIT Mandi",
-    template: "%s | Exodia",
-  },
+  title: "Exodia | IIT Mandi",
   description: "The annual cultural fest of IIT Mandi, where culture meets chaos!",
   keywords: [
     "Exodia",
