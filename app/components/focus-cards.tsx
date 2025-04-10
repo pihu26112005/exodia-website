@@ -20,7 +20,7 @@ export const Card = React.memo(
     const [isMobile, setIsMobile] = useState(false);
 
     useEffect(() => {
-      const checkIsMobile = () => setIsMobile(window.innerWidth < 768);
+      const checkIsMobile = () => setIsMobile(window.innerWidth < 1280);
       checkIsMobile();
       window.addEventListener("resize", checkIsMobile);
       return () => window.removeEventListener("resize", checkIsMobile);
@@ -121,7 +121,7 @@ export function FocusCards({ cards }: { cards: Card[] }) {
                 setHovered={setHovered}
               />
               {(card.name == "Vishal Kumar" || card.name == "Aryan Kumar") && (
-                <div className="max-sm:hidden flex justify-center items-center gap-2 mb-4">
+                <div className="max-xl:hidden flex justify-center items-center gap-2 mb-4">
                   {card.socialMediaLinks.map((l: { name: string; link: string }, index: number) => (
                     <div className="bg-white rounded-3xl hover:scale-150 transition-transform duration-300" key={index}>
                       <Link href={l.link}>
