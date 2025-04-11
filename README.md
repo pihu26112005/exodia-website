@@ -1,6 +1,6 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started  
+## Getting Started
 
 First, run the development server:
 
@@ -16,21 +16,57 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+<!-- adding tech stack used heading and their links name  -->
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Tech used we will be using - 
 
-## Learn More
+- [Next.js 15](https://nextjs.org)
+- [react.js 19](https://react.dev/)
+- [Clerk](https://clerk.dev)
+- [Tailwind CSS](https://tailwindcss.com)
+- [Motion](https://motion.dev)
+- [materialui](https://mui.com/material-ui/)
+- [magicui](https://magicui.design/)
+- [aceternityui](https://ui.aceternity.com/)
+- [GSAP](https://gsap.com)
+- [shadcn/ui](https://ui.shadcn.com/)
+- [three.js](https://threejs.org/)
+- [framer motion](https://motion.dev/) 😎
 
-To learn more about Next.js, take a look at the following resources:
+## Rules to contribute
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Go to the code section (home page of repo).
+2. Click on "Branches", written just below the name "Exodia-IIT-Mandi".
+3. Create your personalized branch by clicking on the new Branch green button on the upper right side, write its name and enter.
+4. After creating the new branch, you can see it on the screen, click on it.
+5. You can verify that you opened your own branch by seeing your branch name just below "Exodia-IIT-Mandi", after you open your branch after step 4.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Then follow the following steps:
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. Go to the repo, download its zip folder by clicking on the green "code" button on the upper right side.
+2. Extract the zip folder, and open it using VS Code.
+3. Open a new terminal in VS Code and write the following commands one by one:
+    > **NOTE:** Here "temp" is my branch name, make sure you replace it with your branch name.
+    > **NOTE:** Also make sure not to make any changes, first you have to link your VS Code local branch with your GitHub branch.
+    ```bash
+    git init
+    git remote add origin https://github.com/Cultural-Council-IIT-Mandi/Exodia-IIT-Mandi.git
+    git fetch origin temp
+    git checkout -b temp origin/temp
+    git add .
+    git commit -m "Your commit message"
+    git push origin temp
+    ```
+4. At the end, you should see "Everything up-to-date" in the terminal.
+5. Then for just checking, make a little change to the `zPageUpdate` file.
+6. Then you have to push these changes by doing the following:
+    - On the left side in VS Code, you have Source Control.
+    - Click on it.
+    - Inside the message box, write a message for your commit.
+    - Then press commit.
+    - If something appears, press the OK button.
+7. Then check on your browser whether that change appears or not. If it appears, Balle Balle! Go and start developing. If not, contact Piyush 🫠 .
+8. Whenever you change code and push to your branch, you will see on the home page of your branch on the TOP - "CREATE PULL REQUEST".
+    - Click on it.
+    - Write the name and description and press create PR.
+    - Let us know to merge it. We will review the code and merge your PR.
