@@ -1,5 +1,6 @@
 import { connectToDB } from "@/lib/connectDB";
-import { announcement } from "@/lib/models/announcement";
+import { Announcement } from "@/lib/models/announcement";
+
 import { NextResponse } from "next/server";
 
 export async function POST(request: Request) {
@@ -16,7 +17,7 @@ export async function POST(request: Request) {
   
     try {
       const createdAt = new Date();
-      const newAnnouncement = new announcement({ title: body.title, description: body.description, imageUrl: body.imageUrl, time: createdAt });
+      const newAnnouncement = new Announcement({ title: body.title, description: body.description, imageUrl: body.imageUrl, time: createdAt });
       await newAnnouncement.save();
   
       return NextResponse.json(newAnnouncement);
