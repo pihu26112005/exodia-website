@@ -1,7 +1,6 @@
 "use client";
 
 
-import { teamsList } from '@/lib/utils';
 import React from 'react';
 import { FocusCards } from '../components/focus-cards';
 

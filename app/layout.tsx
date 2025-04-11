@@ -1,11 +1,17 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+
 import "./globals.css";
+
+import "@uploadthing/react/styles.css";
+
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import HorrorTimer from "./components/HorrorTimer";
 import PreLoader from "./components/PreLoader";
 import CanonicalTag from "./components/CanonicalTag";
+
+import { ToasterProvider } from "@/lib/providers/toast-provider";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -62,7 +68,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <div className="fixed inset-0 bg-[#1a0000] -z-10" />
         <PreLoader />
         <Header />
-        <main className="flex-grow relative z-10">{children}</main>
+        <main className="flex-grow relative z-10">
+          <ToasterProvider />
+          {children}
+          </main>
         <Footer />
         <HorrorTimer />
       </body>
