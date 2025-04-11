@@ -8,31 +8,43 @@ import { Modal, ModalBody, ModalContent, ModalFooter, ModalTrigger } from "../co
 import { TabsDemo } from '../components/HowtoReach_DisplayTabs';
 import { CoolMode } from '../components/cool-mode';
 import FAQ from '../components/faq';
+import { p } from 'framer-motion/client';
 
 
 const contacts = [
   {
     name: "Vishal Kumar",
     photo: "/john-doe.jpg",
+    posn: "Conveiner",
     // number: "+91 98765 43210",
     email: "B22339@students.iitmandi.ac.in",
   },
   {
     name: "Aryan Kumar",
     photo: "/jane-smith.jpg",
+    posn: "Conveiner",
     // number: "+91 87654 32109",
     email: "B22236@students.iitmandi.ac.in",
+  },
+  {
+    name: "Vivek Agarval",
+    photo: "/jane-smith.jpg",
+    posn: "Cultural Secretary",
+    // number: "+91 87654 32109",
+    email: "cultural_secretary@students.iitmandi.ac.in",
   },
   {
     name: "Divyanshu Raj",
     photo: "/alice-johnson.jpg",
     number: "+91 9811197429",
+    posn: "Head",
     email: "b23438@students.iitmandi.ac.in",
   },
   {
     name: "Gourav Chaudhary",
     photo: "/bob-williams.jpg",
     number: "+91 8278741047 ",
+    posn: "Head",
     email: "b23370@students.iitmandi.ac.in",
   },
 ];
@@ -122,6 +134,11 @@ const page = () => {
 
                 {/* Contact Details */}
                 <h2 className="text-white text-2xl text-center font-bold">{contact.name}</h2>
+                <h2 className="text-white text-lg text-center">
+                  <span className="text-[#BB0000]">[</span>
+                  {contact.posn}
+                  <span className="text-[#BB0000]">]</span>
+                </h2>
                 {contact.number && <p className="text-white/80 text-lg text-center mt-1">{contact.number}</p>}
                 <p className="text-[#BB0000] text-lg text-center">{contact.email}</p>
               </motion.div>
