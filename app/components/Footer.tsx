@@ -65,7 +65,7 @@ const Footer = () => {
               {[
                 { href: 'https://www.facebook.com/Exodia.IITMandi', icon: '/socialmedia/facebook.png' },
                 { href: 'https://www.instagram.com/exodia.iitmandi?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==', icon: '/socialmedia/insta.png' },
-                { href: 'https://www.linkedin.com/company/exodia-iit-mandi/', icon: '/socialmedia/linkedin.png' },
+                { href: 'https://www.linkedin.com/company/exodia-iitmandi/', icon: '/socialmedia/linkedin.png' },
                 { href: 'https://x.com/exodia_iitmandi', icon: '/socialmedia/twitter.png' }
               ].map((social) => (
                 <motion.a

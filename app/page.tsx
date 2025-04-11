@@ -56,7 +56,7 @@ export default function Home() {
   });
 
   // Transform scroll progress into horizontal movement
-  const x = useTransform(scrollYProgress, [0, 1], ['0%', '-40%']);
+  const x = useTransform(scrollYProgress, [0, 1], ['40%', '-25%']);
 
   // Create dummy images in public folder if they don't exist
   useEffect(() => {
@@ -192,7 +192,7 @@ export default function Home() {
               <div className="p-6">
                 <h3 className="text-xl font-bold mb-2 text-white group-hover:text-[#BB0000] transition-all duration-300">cosplay</h3>
                 <p className="text-gray-400 mb-4">Dress up as your favorite characters from movies, anime, or games.</p>
-                <Link href="/events/hackathon" className="text-[#BB0000] hover:underline">Explore more →</Link>
+                <Link href="/events" className="text-[#BB0000] hover:underline">Explore more →</Link>
               </div>
             </motion.div>
 
@@ -219,7 +219,7 @@ export default function Home() {
               <div className="p-6">
                 <h3 className="text-xl font-bold mb-2 text-white group-hover:text-[#BB0000] transition-all duration-300">Mr. and Ms. Exodia</h3>
                 <p className="text-gray-400 mb-4">Compete and show off your talent.</p>
-                <Link href="/events/mr-and-ms-exodia" className="text-[#BB0000] hover:underline">Explore more →</Link>
+                <Link href="/events" className="text-[#BB0000] hover:underline">Explore more →</Link>
               </div>
             </motion.div>
 
@@ -246,7 +246,7 @@ export default function Home() {
               <div className="p-6">
                 <h3 className="text-xl font-bold mb-2 text-white group-hover:text-[#BB0000] transition-all duration-300">MUNSC</h3>
                 <p className="text-gray-400 mb-4">A thrilling simulation of the United Nations Security Council.</p>
-                <Link href="/events/robotics" className="text-[#BB0000] hover:underline">Explore more →</Link>
+                <Link href="/events" className="text-[#BB0000] hover:underline">Explore more →</Link>
               </div>
             </motion.div>
           </div>
@@ -279,7 +279,8 @@ export default function Home() {
           transition={{ duration: 0.8, delay: 0.5 }}
         >
           <Link
-            href="https://unstop.com/o/J9STo7t?utm_medium=Share&utm_source=shortUrl"
+            // href="https://unstop.com/o/J9STo7t?utm_medium=Share&utm_source=shortUrl"
+            href="https://www.instagram.com/exodia.iitmandi?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw%3D%3D"
             className="px-6 sm:px-8 py-3 rounded-2xl bg-[#BB0000] text-white border border-[#BB0000] hover:bg-transparent hover:text-[#FF0000] transition-all duration-300 shadow-lg shadow-[#BB0000]/20"
           >
             Become Ambassador

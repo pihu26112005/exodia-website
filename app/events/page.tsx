@@ -43,7 +43,8 @@ const events = [
     category: 'Dance',
     description: 'A solo dance competition with magical themes.',
     image: getCloudinaryImageUrl('solo_dance_mchdqn'),
-    rulebook: '/rulebooks/sorcerers-solo.pdf',
+    // rulebook: '/rulebooks/sorcerers-solo.pdf',
+    rulebook: 'https://drive.google.com/drive/u/0/mobile/folders/1HDTET2hSR5IvnvghrGC3aAaegtsq3pGS?usp=drive_link',
     details: 'Showcase your solo dance skills with magical and mystical themes.'
   },
   {
@@ -52,7 +53,8 @@ const events = [
     category: 'Dance',
     description: 'Street dance battle competition.',
     image: getCloudinaryImageUrl('BackStreet_Brawl_y30kqr'),
-    rulebook: '/rulebooks/backstreet-brawl.pdf',
+    // rulebook: '/rulebooks/backstreet-brawl.pdf',
+    rulebook: 'https://drive.google.com/drive/u/0/mobile/folders/1HDTET2hSR5IvnvghrGC3aAaegtsq3pGS?usp=drive_link',
     details: 'Compete in street dance battles with various styles.'
   },
   {
@@ -61,7 +63,8 @@ const events = [
     category: 'Dance',
     description: 'Duet dance competition.',
     image: getCloudinaryImageUrl('dualMirage_au2n5x'),
-    rulebook: '/rulebooks/dual-mirage.pdf',
+    // rulebook: '/rulebooks/dual-mirage.pdf',
+    rulebook: 'https://drive.google.com/drive/u/0/mobile/folders/1HDTET2hSR5IvnvghrGC3aAaegtsq3pGS?usp=drive_link',
     details: 'Partner dance competition showcasing coordination and creativity.'
   },
   {
@@ -70,7 +73,8 @@ const events = [
     category: 'Dance',
     description: 'Group dance synchronization competition.',
     image: getCloudinaryImageUrl('SONIC_SYNC_tmkjnt'),
-    rulebook: '/rulebooks/sonic-sync.pdf',
+    // rulebook: '/rulebooks/sonic-sync.pdf',
+    rulebook: 'https://drive.google.com/drive/u/0/mobile/folders/1HDTET2hSR5IvnvghrGC3aAaegtsq3pGS?usp=drive_link',
     details: 'Group dance competition focusing on synchronization and teamwork.'
   },
   {
@@ -79,7 +83,8 @@ const events = [
     category: 'Dance',
     description: 'Classical dance competition.',
     image: getCloudinaryImageUrl('Tarangini_umjahb'),
-    rulebook: '/rulebooks/tarangini.pdf',
+    // rulebook: '/rulebooks/tarangini.pdf',
+    rulebook: 'https://drive.google.com/drive/u/0/mobile/folders/1HDTET2hSR5IvnvghrGC3aAaegtsq3pGS?usp=drive_link',
     details: 'Showcase your classical dance skills in various traditional styles.'
   },
 
@@ -90,7 +95,8 @@ const events = [
     category: 'Theatre',
     description: 'Street plays that speak to the soul.',
     image: getCloudinaryImageUrl('nukkadnatak_nwkwbq'),
-    rulebook: '/rulebooks/nukkad-natak.pdf',
+    // rulebook: '/rulebooks/nukkad-natak.pdf',
+    rulebook: 'https://drive.google.com/drive/u/0/mobile/folders/1HDTET2hSR5IvnvghrGC3aAaegtsq3pGS?usp=drive_link',
     details: 'Stage powerful street plays that address social issues.'
   },
   {
@@ -99,7 +105,8 @@ const events = [
     category: 'Theatre',
     description: 'Comedy theatre competition.',
     image: getCloudinaryImageUrl('stand_up_iwkapi'),
-    rulebook: '/rulebooks/laughter-lab.pdf',
+    // rulebook: '/rulebooks/laughter-lab.pdf',
+    rulebook: 'https://drive.google.com/drive/u/0/mobile/folders/1HDTET2hSR5IvnvghrGC3aAaegtsq3pGS?usp=drive_link',
     details: 'Present humorous theatrical performances.'
   },
   {
@@ -108,7 +115,8 @@ const events = [
     category: 'Theatre',
     description: 'Dramatic theatre competition.',
     image: getCloudinaryImageUrl('Theatre_of_dreams_vdwzum'),
-    rulebook: '/rulebooks/theatre-of-dreams.pdf',
+    // rulebook: '/rulebooks/theatre-of-dreams.pdf',
+    rulebook: 'https://drive.google.com/drive/u/0/mobile/folders/1HDTET2hSR5IvnvghrGC3aAaegtsq3pGS?usp=drive_link',
     details: 'Stage dramatic performances with compelling narratives.'
   },
   {
@@ -117,7 +125,8 @@ const events = [
     category: 'Theatre',
     description: 'Solo theatrical performance.',
     image: getCloudinaryImageUrl('aTaleAlone_ktduhj'),
-    rulebook: '/rulebooks/a-tale-alone.pdf',
+    // rulebook: '/rulebooks/a-tale-alone.pdf',
+    rulebook: 'https://drive.google.com/drive/u/0/mobile/folders/1HDTET2hSR5IvnvghrGC3aAaegtsq3pGS?usp=drive_link',
     details: 'One-person theatrical performance competition.'
   },
 
@@ -128,7 +137,8 @@ const events = [
     category: 'Literary',
     description: 'Comedy writing competition.',
     image: getCloudinaryImageUrl('giggle-goblet'),
-    rulebook: '/rulebooks/giggle-goblet.pdf',
+    // rulebook: '/rulebooks/giggle-goblet.pdf',
+    rulebook: 'https://drive.google.com/drive/u/0/mobile/folders/1HDTET2hSR5IvnvghrGC3aAaegtsq3pGS?usp=drive_link',
     details: 'Showcase your humorous writing skills.'
   },
   {
@@ -137,7 +147,8 @@ const events = [
     category: 'Literary',
     description: 'Story writing competition.',
     image: getCloudinaryImageUrl('Tales_of_Triumph_zep2zr'),
-    rulebook: '/rulebooks/tales-of-triumph.pdf',
+    // rulebook: '/rulebooks/tales-of-triumph.pdf',
+    rulebook: 'https://drive.google.com/drive/u/0/mobile/folders/1HDTET2hSR5IvnvghrGC3aAaegtsq3pGS?usp=drive_link',
     details: 'Create compelling stories and narratives.'
   },
   {
@@ -146,7 +157,8 @@ const events = [
     category: 'Literary',
     description: 'Poetry recitation competition.',
     image: getCloudinaryImageUrl('cite-and-recite'),
-    rulebook: '/rulebooks/cite-and-recite.pdf',
+    // rulebook: '/rulebooks/cite-and-recite.pdf',
+    rulebook: 'https://drive.google.com/drive/u/0/mobile/folders/1HDTET2hSR5IvnvghrGC3aAaegtsq3pGS?usp=drive_link',
     details: 'Recite poetry with emotion and expression.'
   },
   {
@@ -155,7 +167,8 @@ const events = [
     category: 'Literary',
     description: 'Urdu poetry competition.',
     image: getCloudinaryImageUrl('bazm-e-sukhan'),
-    rulebook: '/rulebooks/bazm-e-sukhan.pdf',
+    // rulebook: '/rulebooks/bazm-e-sukhan.pdf',
+    rulebook: 'https://drive.google.com/drive/u/0/mobile/folders/1HDTET2hSR5IvnvghrGC3aAaegtsq3pGS?usp=drive_link',
     details: 'Showcase your Urdu poetry skills.'
   },
   {
@@ -164,7 +177,8 @@ const events = [
     category: 'Literary',
     description: 'Poetry writing competition.',
     image: getCloudinaryImageUrl('VerseOfTheVigil_axidl5'),
-    rulebook: '/rulebooks/verse-of-the-vigil.pdf',
+    // rulebook: '/rulebooks/verse-of-the-vigil.pdf',
+    rulebook: 'https://drive.google.com/drive/u/0/mobile/folders/1HDTET2hSR5IvnvghrGC3aAaegtsq3pGS?usp=drive_link',
     details: 'Create original poetry pieces.'
   },
   {
@@ -173,7 +187,8 @@ const events = [
     category: 'Literary',
     description: 'Storytelling competition.',
     image: getCloudinaryImageUrl('spin-a-yarn'),
-    rulebook: '/rulebooks/spin-a-yarn.pdf',
+    // rulebook: '/rulebooks/spin-a-yarn.pdf',
+    rulebook: 'https://drive.google.com/drive/u/0/mobile/folders/1HDTET2hSR5IvnvghrGC3aAaegtsq3pGS?usp=drive_link',
     details: 'Tell engaging stories with your unique style.'
   },
   {
@@ -182,7 +197,8 @@ const events = [
     category: 'Literary',
     description: 'An evening of poetic expressions.',
     image: getCloudinaryImageUrl('Mushaira_znwdwm'),
-    rulebook: '/rulebooks/mushaira.pdf',
+    // rulebook: '/rulebooks/mushaira.pdf',
+    rulebook: 'https://drive.google.com/drive/u/0/mobile/folders/1HDTET2hSR5IvnvghrGC3aAaegtsq3pGS?usp=drive_link',
     details: 'Compete in Urdu and Hindi poetry competitions.'
   },
 
@@ -193,7 +209,8 @@ const events = [
     category: 'Business',
     description: 'Entrepreneurship competition.',
     image: getCloudinaryImageUrl('u9265455913_httpss.mj.run5y7ESYAvIUA_High-contrast_anime-styl_317da7cd-d142-4726-bfa0-0d5d4fa281687_1_1_m8eyxq'),
-    rulebook: '/rulebooks/make-your-maverick.pdf',
+    // rulebook: '/rulebooks/make-your-maverick.pdf',
+    rulebook: 'https://drive.google.com/drive/u/0/mobile/folders/1HDTET2hSR5IvnvghrGC3aAaegtsq3pGS?usp=drive_link',
     details: 'Present your innovative business ideas.'
   },
   {
@@ -202,7 +219,8 @@ const events = [
     category: 'Business',
     description: 'Branding competition.',
     image: getCloudinaryImageUrl('brandForge_anud7x'),
-    rulebook: '/rulebooks/brand-forge.pdf',
+    // rulebook: '/rulebooks/brand-forge.pdf',
+    rulebook: 'https://drive.google.com/drive/u/0/mobile/folders/1HDTET2hSR5IvnvghrGC3aAaegtsq3pGS?usp=drive_link',
     details: 'Create and present brand strategies.'
   },
   {
@@ -211,7 +229,8 @@ const events = [
     category: 'Business',
     description: 'Advertising competition.',
     image: getCloudinaryImageUrl('advertise-it-right'),
-    rulebook: '/rulebooks/advertise-it-right.pdf',
+    // rulebook: '/rulebooks/advertise-it-right.pdf',
+    rulebook: 'https://drive.google.com/drive/u/0/mobile/folders/1HDTET2hSR5IvnvghrGC3aAaegtsq3pGS?usp=drive_link',
     details: 'Create compelling advertisements.'
   },
 
@@ -222,7 +241,8 @@ const events = [
     category: 'Quiz',
     description: 'Game of Thrones and House of the Dragon quiz.',
     image: getCloudinaryImageUrl('GOT_z9cqmx'),
-    rulebook: '/rulebooks/got-quiz.pdf',
+    // rulebook: '/rulebooks/got-quiz.pdf',
+    rulebook: 'https://drive.google.com/drive/u/0/mobile/folders/1HDTET2hSR5IvnvghrGC3aAaegtsq3pGS?usp=drive_link',
     details: 'Test your knowledge of the Game of Thrones universe.'
   },
   {
@@ -231,7 +251,8 @@ const events = [
     category: 'Quiz',
     description: 'Harry Potter universe quiz.',
     image: getCloudinaryImageUrl('harry-potter-quiz'),
-    rulebook: '/rulebooks/harry-potter-quiz.pdf',
+    // rulebook: '/rulebooks/harry-potter-quiz.pdf',
+    rulebook: 'https://drive.google.com/drive/u/0/mobile/folders/1HDTET2hSR5IvnvghrGC3aAaegtsq3pGS?usp=drive_link',
     details: 'Test your knowledge of the Wizarding World.'
   },
   {
@@ -240,7 +261,8 @@ const events = [
     category: 'Quiz',
     description: 'General knowledge quiz.',
     image: getCloudinaryImageUrl('jigyasa_czcpbu'),
-    rulebook: '/rulebooks/jigyasa.pdf',
+    // rulebook: '/rulebooks/jigyasa.pdf',
+    rulebook: 'https://drive.google.com/drive/u/0/mobile/folders/1HDTET2hSR5IvnvghrGC3aAaegtsq3pGS?usp=drive_link',
     details: 'Test your general knowledge across various topics.'
   },
 
@@ -251,7 +273,8 @@ const events = [
     category: 'Photography',
     description: 'Photography storytelling competition.',
     image: getCloudinaryImageUrl('Snap_A_Tale_fh0nkw'),
-    rulebook: '/rulebooks/snap-a-tale.pdf',
+    // rulebook: '/rulebooks/snap-a-tale.pdf',
+    rulebook: 'https://drive.google.com/drive/u/0/mobile/folders/1HDTET2hSR5IvnvghrGC3aAaegtsq3pGS?usp=drive_link',
     details: 'Tell stories through your photographs.'
   },
   {
@@ -260,7 +283,8 @@ const events = [
     category: 'Photography',
     description: 'Short film competition.',
     image: getCloudinaryImageUrl('Exoreels_etolvz'),
-    rulebook: '/rulebooks/exoreel.pdf',
+    // rulebook: '/rulebooks/exoreel.pdf',
+    rulebook: 'https://drive.google.com/drive/u/0/mobile/folders/1HDTET2hSR5IvnvghrGC3aAaegtsq3pGS?usp=drive_link',
     details: 'Create and present short films.'
   },
   {
@@ -269,7 +293,8 @@ const events = [
     category: 'Photography',
     description: 'Photography competition.',
     image: getCloudinaryImageUrl('Shutter_Stories_fafhzg'),
-    rulebook: '/rulebooks/shutter-stories.pdf',
+    // rulebook: '/rulebooks/shutter-stories.pdf',
+    rulebook: 'https://drive.google.com/drive/u/0/mobile/folders/1HDTET2hSR5IvnvghrGC3aAaegtsq3pGS?usp=drive_link',
     details: 'Showcase your photography skills.'
   },
 
@@ -280,7 +305,8 @@ const events = [
     category: 'Fine Arts',
     description: 'Watercolor painting competition.',
     image: getCloudinaryImageUrl('waterpaint_p0aapo'),
-    rulebook: '/rulebooks/waterpaint.pdf',
+    // rulebook: '/rulebooks/waterpaint.pdf',
+    rulebook: 'https://drive.google.com/drive/u/0/mobile/folders/1HDTET2hSR5IvnvghrGC3aAaegtsq3pGS?usp=drive_link',
     details: 'Create beautiful watercolor artworks.'
   },
   {
@@ -289,7 +315,8 @@ const events = [
     category: 'Fine Arts',
     description: 'Sculpture competition.',
     image: getCloudinaryImageUrl('Sculpture_making_qjreti'),
-    rulebook: '/rulebooks/sculpture.pdf',
+    // rulebook: '/rulebooks/sculpture.pdf',
+    rulebook: 'https://drive.google.com/drive/u/0/mobile/folders/1HDTET2hSR5IvnvghrGC3aAaegtsq3pGS?usp=drive_link',
     details: 'Create magical sculptures.'
   },
   {
@@ -298,7 +325,8 @@ const events = [
     category: 'Fine Arts',
     description: 'Digital art competition.',
     image: getCloudinaryImageUrl('Face_Painting_joqg2n'),
-    rulebook: '/rulebooks/one-to-vecna.pdf',
+    // rulebook: '/rulebooks/one-to-vecna.pdf',
+    rulebook: 'https://drive.google.com/drive/u/0/mobile/folders/1HDTET2hSR5IvnvghrGC3aAaegtsq3pGS?usp=drive_link',
     details: 'Create digital artworks.'
   },
 
@@ -309,7 +337,8 @@ const events = [
     category: 'Music',
     description: 'Band performance competition.',
     image: getCloudinaryImageUrl('BattleOfBands_dkfouz'),
-    rulebook: '/rulebooks/battle-of-bands.pdf',
+    // rulebook: '/rulebooks/battle-of-bands.pdf',
+    rulebook: 'https://drive.google.com/drive/u/0/mobile/folders/1HDTET2hSR5IvnvghrGC3aAaegtsq3pGS?usp=drive_link',
     details: 'Showcase your band\'s musical talent.'
   }
 ];
