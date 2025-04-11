@@ -21,9 +21,9 @@ export const teamsList = [
           ],
         },
         { 
-          name: 'Aryan Kumar',
+          name: 'Aryan Singh',
           photo: 'https://a64j3m5x58.ufs.sh/f/XmKfJ6hWnfg8EgnL0zqXyL9MO1q2nHQca6xPvFe7YNiRswgV',
-          heading: 'Aryan Kumar',
+          heading: 'Aryan Singh',
           socialMediaLinks: [
             { name: 'linkedin', link: 'https://www.linkedin.com/in/aryan0singh/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app' },
             { name: 'email', link: 'B22236@students.iitmandi.ac.in' },
