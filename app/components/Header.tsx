@@ -26,7 +26,7 @@ const Header = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden sm:flex items-center space-x-8">
+          <nav className="max-sm:hidden sm:flex items-center space-x-8">
             {menuItems.map((item) => (
               <Link
                 key={item.href}
@@ -60,7 +60,7 @@ const Header = () => {
             </div>
             <button
             onClick={() => setIsOpen(!isOpen)}
-            className="sm:hidden relative w-10 h-10 flex items-center justify-center"
+            className="sm:hidden relative w-10 h-10 max-sm:flex items-center justify-center"
             aria-label="Toggle menu"
           >
             <div className="w-6 h-6 flex flex-col justify-center items-center">
