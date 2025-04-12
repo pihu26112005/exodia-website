@@ -1,12 +1,8 @@
 "use client"
 
-import { z } from 'zod';
-
 import { useForm } from 'react-hook-form';
 
-import { zodResolver } from '@hookform/resolvers/zod';
-
-import toast from 'react-hot-toast';
+import toast, { Toaster } from 'react-hot-toast';
 
 import { useRouter } from 'next/navigation';
 
@@ -22,13 +18,12 @@ interface AdminPasswordModalProps {
     setIsAdmin: () => void;
 }
 
-const formSchema = z.object({
-    password: z.string().min(1, { message: "Password is required" })
-})
+type FormValues = {
+    password: string;
+};
 
 export const AdminPasswordModal = ({ isOpen, onClose, onOpen, setIsAdmin }: AdminPasswordModalProps) => {
-    const form = useForm<z.infer<typeof formSchema>>({
-        resolver: zodResolver(formSchema),
+    const form = useForm<FormValues>({
         defaultValues: {
             password: ""
         }
@@ -36,9 +31,7 @@ export const AdminPasswordModal = ({ isOpen, onClose, onOpen, setIsAdmin }: Admi
 
     const router = useRouter();
 
-    
-    
-    const onSubmit = async (values: z.infer<typeof formSchema>) => {
+    const onSubmit = async (values: FormValues) => {
         if(values.password === process.env.NEXT_PUBLIC_ADMIN_PASSWORD) {
             setIsAdmin();
             onClose();
@@ -49,6 +42,7 @@ export const AdminPasswordModal = ({ isOpen, onClose, onOpen, setIsAdmin }: Admi
     }
 
     return (
+        <>
         <Modal
             title="Admin Page"
             description="Enter the admin password for access to the admin page"
@@ -56,6 +50,7 @@ export const AdminPasswordModal = ({ isOpen, onClose, onOpen, setIsAdmin }: Admi
             onClose={onClose}
             className='bg-white'
         >
+            <Toaster toastOptions={{ style: { zIndex: 9999 } }} position='bottom-left' />
             <div>
                 <div className='py-2 pb-4 space-y-4'>
                     <Form {...form}>
@@ -89,5 +84,6 @@ export const AdminPasswordModal = ({ isOpen, onClose, onOpen, setIsAdmin }: Admi
                 </div>
             </div>
         </Modal>
+        </>
     )
 }
