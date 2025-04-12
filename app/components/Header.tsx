@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import Image from 'next/image';
+import { FaInstagram } from 'react-icons/fa';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -25,7 +25,6 @@ const Header = () => {
             EXODIA
           </Link>
 
-          {/* Desktop Navigation */}
           <nav className="max-sm:hidden sm:flex items-center space-x-8">
             {menuItems.map((item) => (
               <Link
@@ -45,17 +44,11 @@ const Header = () => {
             </Link>
           </nav>
 
-          {/* Mobile Menu Button */}
+          
           <div className='flex justify-center items-center'>
             <div className='flex justify-center items-center'>
               <Link href="https://www.instagram.com/exodia.iitmandi?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" className="text-2xl sm:text-3xl font-bold text-white hover:text-[#BB0000] transition-colors">
-              <Image 
-                src="/socialmedia/insta.png"
-                alt="Logo"
-                width={50}
-                height={50}
-                className="sm:hidden w-8 h-8 object-cover rounded-full"
-              />
+                <FaInstagram />
               </Link>
             </div>
             <button
@@ -81,7 +74,6 @@ const Header = () => {
           </div>
         </div>
 
-        {/* Mobile Navigation */}
         <AnimatePresence>
           {isOpen && (
             <motion.nav
