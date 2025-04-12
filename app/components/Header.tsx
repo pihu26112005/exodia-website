@@ -36,20 +36,22 @@ const Header = () => {
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#BB0000] group-hover:w-full transition-all duration-300" />
               </Link>
             ))}
-            <Link
-              href="/join"
-              className="px-4 py-2 bg-[#BB0000] text-white border border-[#BB0000] hover:bg-transparent hover:text-[#FF0000] transition-all duration-300 shadow-lg shadow-[#BB0000]/20"
-            >
-              Join Exodia
-            </Link>
+
           </nav>
 
           
           <div className='flex justify-center items-center'>
+            
             <div className='flex justify-center items-center'>
               <Link href="https://www.instagram.com/exodia.iitmandi?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" className="text-2xl sm:text-3xl font-bold text-white hover:text-[#BB0000] transition-colors">
                 <FaInstagram />
               </Link>
+              <Link 
+              href="/join"
+              className="px-4 py-2 ml-4 rounded-md bg-transparent hover:text-white border border-[#BB0000] hover:bg-[#BB0000] text-[#FF0000] transition-all duration-300 shadow-lg shadow-[#BB0000]/20"
+            >
+              Join Exodia
+            </Link>
             </div>
             <button
             onClick={() => setIsOpen(!isOpen)}
