@@ -1,12 +1,8 @@
 "use client";
 
-import { zodResolver } from "@hookform/resolvers/zod";
-
 import { useRouter } from "next/navigation";
 
 import { useForm } from "react-hook-form";
-
-import { z } from "zod";
 
 import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from "../components/ui/form";
 import { Input } from "../components/ui/input";
@@ -18,16 +14,18 @@ import { Separator } from "../components/ui/separator";
 import { ModalProvider } from "@/lib/providers/modal-provider";
 import { isAdminModal } from "@/lib/hooks/is-admin";
 import { isAuthorized } from "@/lib/hooks/is-authorized";
+import { ToasterProvider } from "@/lib/providers/toast-provider";
 
-const formSchema = z.object({
-  title: z.string().min(1, {message: "Title is required"}),
-  description: z.string().min(1, {message: "Description is required"}),
-  imageUrl: z.string().optional()
-});
+import toast from "react-hot-toast";
+
+type FormValues = {
+  title: string;
+  description: string;
+  imageUrl?: string;
+};
 
 const AdminPage = () => {
-  const form = useForm<z.infer<typeof formSchema>>({
-    resolver: zodResolver(formSchema),
+  const form = useForm<FormValues>({
     defaultValues: {
       title: "",
       description: "",
@@ -37,7 +35,7 @@ const AdminPage = () => {
 
   const router = useRouter();
 
-  const isLoading = form.formState.isSubmitting;
+  const { isSubmitting, isValid } = form.formState;
 
   const setIsAdmin =  isAuthorized(state => state.setIsAdmin);
   const isAdmin =  isAuthorized(state => state.isAdmin);
@@ -50,8 +48,7 @@ const AdminPage = () => {
   if(!isAdmin)
     onOpen();
 
-  const onSubmit = async (values : z.infer<typeof formSchema>) => {
-    console.log("something");
+  const onSubmit = async (values : FormValues) => {
     try {
       const response = await fetch("/api/announcements", {
         method: "POST",
@@ -66,15 +63,20 @@ const AdminPage = () => {
       router.refresh();
 
       const data = await response.json();
+
+      toast.success("Announcement created successfully!");
+
       console.log("Announcement created successfully:", data);
     }
     catch(error) {
+      toast.error("Failed to create announcement. Please try again.");
       console.error("Failed to create announcement:", error);
     }
   };
 
   return (
     <>
+      {!isOpen && <ToasterProvider />}
       <ModalProvider isOpen={isOpen} onClose={onClose} onOpen={onOpen} setIsAdmin={setIsAdmin} />
       <div className="h-full p-4 space-y-2 max-w-3xl mx-auto py-32">
           <Form {...form}>
@@ -103,7 +105,7 @@ const AdminPage = () => {
                       <FormLabel>Title</FormLabel>
                         <FormControl>
                         <Input
-                          disabled={isLoading}
+                          disabled={isSubmitting}
                           placeholder="Title"
                           {...field}
                         />
@@ -123,7 +125,7 @@ const AdminPage = () => {
                       <FormLabel>Description</FormLabel>
                       <FormControl>
                         <Textarea
-                          disabled={isLoading}
+                          disabled={isSubmitting}
                           rows={7}
                           className="resize-none"
                           placeholder="Description"
@@ -138,7 +140,7 @@ const AdminPage = () => {
                   )}
                 />
               <div className="w-full flex justify-center">
-                <Button size={"lg"} disabled={isLoading} type="submit">
+                <Button size={"lg"} disabled={isSubmitting || !isValid} type="submit">
                     Create Announcement
                 </Button>
               </div>
