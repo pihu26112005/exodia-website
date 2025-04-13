@@ -32,7 +32,7 @@ const Card = ({ imgsrc, i }: CardProps) => {
         sizes="(max-width: 768px) 300px, 400px"
         style={{ objectFit: 'cover' }}
         className="z-0"
-        priority={i < 2} // Prioritize loading the first two images
+        priority={i < 2} 
       />
       
       <div className="absolute bottom-0 left-0 p-4 z-30 w-full">

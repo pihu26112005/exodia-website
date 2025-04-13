@@ -8,7 +8,7 @@ export function cn(...inputs: ClassValue[]) {
 export const teamsList = [ 
     {
       id: 'team0',
-      name: 'Convener',
+      name: 'Convenors',
       members: [
         { 
           name: 'Vishal Kumar',
@@ -33,19 +33,8 @@ export const teamsList = [
     },
     {
       id: 'team1',
-      name: 'Secretary',
+      name: 'Secretaries',
       members: [
-        { 
-          name: 'Ayush Sinha',
-          photo: 'https://a64j3m5x58.ufs.sh/f/XmKfJ6hWnfg8HG0sJDWxhybz3vfeqLAQnpcSBWg6d54OMKiH',
-          heading: 'Literary Sec',
-          socialMediaLinks: [
-            { name: 'linkedin', link: 'https://www.linkedin.com/in/ayush-sinha-iit-mandi?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app' },
-            { name: 'instagram', link: 'https://instagram.com/cultureshock_poet' },
-            { name: 'whatsapp', link: '7992323005' },
-            { name: 'email', link: 'literary_secretary@students.iitmandi.ac.in' },
-          ],
-        },
         { 
           name: 'Vivek Aggarwal',
           photo: 'https://a64j3m5x58.ufs.sh/f/XmKfJ6hWnfg8XSTLmChWnfg8CkBHLr7YPo4jxz6Elt0a5ucZ',
@@ -57,6 +46,18 @@ export const teamsList = [
             { name: 'email', link: 'cultural_secretary@students.iitmandi.ac.in' },
           ],
         },
+        { 
+          name: 'Ayush Sinha',
+          photo: 'https://a64j3m5x58.ufs.sh/f/XmKfJ6hWnfg8HG0sJDWxhybz3vfeqLAQnpcSBWg6d54OMKiH',
+          heading: 'Literary Sec',
+          socialMediaLinks: [
+            { name: 'linkedin', link: 'https://www.linkedin.com/in/ayush-sinha-iit-mandi?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app' },
+            { name: 'instagram', link: 'https://instagram.com/cultureshock_poet' },
+            { name: 'whatsapp', link: '7992323005' },
+            { name: 'email', link: 'literary_secretary@students.iitmandi.ac.in' },
+          ],
+        },
+        
       ], 
     },
     {
@@ -71,15 +72,6 @@ export const teamsList = [
             { name: 'instagram', link: 'https://instagram.com/ayangarg2' },
             { name: 'whatsapp', link: '7756837945' },
             { name: 'email', link: 'ayangarg2005@gmail.com' },
-          ],
-        },
-        { 
-          name: 'Ayush Bhardwaj',
-          photo: 'https://a64j3m5x58.ufs.sh/f/XmKfJ6hWnfg8GAYxcapvLvuzkRJai146Y2oZCN0Q3DmjflbH',
-          socialMediaLinks: [
-            { name: 'linkedin', link: 'https://www.linkedin.com/in/ayush-bhardwaj01' },
-            { name: 'whatsapp', link: '9877809383' },
-            { name: 'email', link: 'b23199@students.iitmandi.ac.in' },
           ],
         },
         { 
@@ -365,31 +357,12 @@ export const teamsList = [
             { name: 'email', link: 'B23022@students.iitmandi.ac.in' },
           ],
         },
-        { 
-          name: 'Prashashti',
-          photo: 'https://a64j3m5x58.ufs.sh/f/XmKfJ6hWnfg8qr6kyjoQarxcF3UnTdD8M24buszJNjfgyh1p',
-          socialMediaLinks: [
-            { name: 'linkedin', link: 'https://www.linkedin.com/in/prashasti-singh-5516a8288' },
-            { name: 'instagram', link: ' https://www.instagram.com/prashasti._.x?igsh=MTY3bmo5em00anc3dQ%3D%3D&utm_source=qr' },
-            { name: 'email', link: 'B22339@students.iitmandi.ac.in' },
-          ],
-        },
       ],
     },
     {
       id: 'team10',
       name: 'Decor team',
       members: [
-        { 
-          name: 'Ruchi',
-          photo: 'https://a64j3m5x58.ufs.sh/f/XmKfJ6hWnfg8i3zUjT5ndrAuLZbPVFehBwa7QtcmkpnJoi6T',
-          socialMediaLinks: [
-            { name: 'linkedin', link: '' },
-            { name: 'instagram', link: 'Ruchi_pundir_16' },
-            { name: 'whatsapp', link: '9818891994' },
-            { name: 'email', link: 'B22317@students.iitmandi.ac.in' },
-          ],
-        },
         { 
           name: 'Aditya Bagyan',
           photo: 'https://a64j3m5x58.ufs.sh/f/XmKfJ6hWnfg8jlfTs9EvUlrMC78dNGSEnVcpPI96zhWaqeDy',
