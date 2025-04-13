@@ -15,16 +15,16 @@ const contacts = [
   {
     name: "Vishal Kumar",
     photo: "/john-doe.jpg",
-    posn: "Conveiner",
+    posn: "Convener",
     // number: "+91 98765 43210",
-    email: "B22339@students.iitmandi.ac.in",
+    email: "convenor@exodia-iitmandi.org",
   },
   {
-    name: "Aryan Kumar",
+    name: "Aryan Singh",
     photo: "/jane-smith.jpg",
-    posn: "Conveiner",
+    posn: "Convener",
     // number: "+91 87654 32109",
-    email: "B22236@students.iitmandi.ac.in",
+    email: "convenor@exodia-iitmandi.org",
   },
   {
     name: "Vivek Agarval",
@@ -38,14 +38,14 @@ const contacts = [
     photo: "/alice-johnson.jpg",
     number: "+91 9811197429",
     posn: "Head",
-    email: "b23438@students.iitmandi.ac.in",
+    email: "Publicrelations@exodia-iitmandi.org",
   },
   {
     name: "Gourav Chaudhary",
     photo: "/bob-williams.jpg",
     number: "+91 8278741047 ",
     posn: "Head",
-    email: "b23370@students.iitmandi.ac.in",
+    email: "corporaterelations@exodia-iitmandi.org",
   },
 ];
 
