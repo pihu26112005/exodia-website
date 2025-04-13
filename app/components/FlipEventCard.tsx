@@ -29,15 +29,15 @@ export default function FlipEventCard({
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 768);
     };
-    
+
     checkMobile();
     window.addEventListener('resize', checkMobile);
-    
+
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
   return (
-    <div 
+    <div
       className="relative h-[500px] w-full md:w-[400px] perspective-[1000px] cursor-pointer"
       onMouseEnter={() => !isMobile && setIsHovered(true)}
       onMouseLeave={() => !isMobile && setIsHovered(false)}
@@ -65,7 +65,7 @@ export default function FlipEventCard({
 
             {/* Content */}
             <div className="absolute inset-0 p-6 flex flex-col justify-end transform transition-all duration-300">
-              <motion.div 
+              <motion.div
                 animate={isMobile || isHovered ? { y: 0, opacity: 1 } : { y: 20, opacity: 0 }}
                 transition={{ duration: 0.3 }}
                 className="mb-4"
@@ -74,14 +74,14 @@ export default function FlipEventCard({
                   {category}
                 </span>
               </motion.div>
-              <motion.h3 
+              <motion.h3
                 animate={isMobile || isHovered ? { y: 0, opacity: 1 } : { y: 20, opacity: 0 }}
                 transition={{ duration: 0.3, delay: 0.1 }}
                 className="text-2xl font-bold text-white mb-2"
               >
                 {title}
               </motion.h3>
-              <motion.p 
+              <motion.p
                 animate={isMobile || isHovered ? { y: 0, opacity: 1 } : { y: 20, opacity: 0 }}
                 transition={{ duration: 0.3, delay: 0.2 }}
                 className="text-gray-300 text-sm"
@@ -91,7 +91,7 @@ export default function FlipEventCard({
             </div>
 
             {/* Click indicator - only show on desktop */}
-            <motion.div 
+            <motion.div
               className="absolute top-4 right-4 text-white/50 hidden md:block"
               animate={isHovered ? { opacity: 1 } : { opacity: 0 }}
               transition={{ duration: 0.3 }}
@@ -109,15 +109,17 @@ export default function FlipEventCard({
         </div>
 
         {/* Back of card */}
-        <div 
+        <div
           className="absolute inset-0 backface-hidden"
           style={{ transform: 'rotateY(180deg)' }}
         >
           <div className="h-full bg-[#0A0A0A] rounded-lg p-6 flex flex-col">
             <h3 className="text-2xl font-bold text-white mb-4">{title}</h3>
             <p className="text-gray-300 mb-6 flex-grow">{details}</p>
-            <Link 
+            <Link
               href={rulebook}
+              target="_blank"
+              rel="noopener noreferrer"
               className="w-full text-center px-6 py-3 bg-[#BB0000] text-white rounded-lg hover:bg-[#BB0000]/80 transition-colors duration-300"
               onClick={(e) => e.stopPropagation()}
             >
