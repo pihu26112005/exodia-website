@@ -136,7 +136,7 @@ const events = [
     title: 'GIGGLE GOBLET',
     category: 'Literary',
     description: 'Comedy writing competition.',
-    image: getCloudinaryImageUrl('giggle-goblet'),
+    image: getCloudinaryImageUrl('Screenshot_2025-04-13_at_2.50.11_AM_ts4idq'),
     // rulebook: '/rulebooks/giggle-goblet.pdf',
     rulebook: 'https://drive.google.com/drive/u/0/mobile/folders/1HDTET2hSR5IvnvghrGC3aAaegtsq3pGS?usp=drive_link',
     details: 'Showcase your humorous writing skills.'
@@ -156,20 +156,10 @@ const events = [
     title: 'CITE AND RECITE',
     category: 'Literary',
     description: 'Poetry recitation competition.',
-    image: getCloudinaryImageUrl('cite-and-recite'),
+    image: getCloudinaryImageUrl('Screenshot_2025-04-13_at_2.48.40_AM_oaodny'),
     // rulebook: '/rulebooks/cite-and-recite.pdf',
     rulebook: 'https://drive.google.com/drive/u/0/mobile/folders/1HDTET2hSR5IvnvghrGC3aAaegtsq3pGS?usp=drive_link',
     details: 'Recite poetry with emotion and expression.'
-  },
-  {
-    id: 'bazm-e-sukhan',
-    title: 'BAZM - E - SUKHAN',
-    category: 'Literary',
-    description: 'Urdu poetry competition.',
-    image: getCloudinaryImageUrl('bazm-e-sukhan'),
-    // rulebook: '/rulebooks/bazm-e-sukhan.pdf',
-    rulebook: 'https://drive.google.com/drive/u/0/mobile/folders/1HDTET2hSR5IvnvghrGC3aAaegtsq3pGS?usp=drive_link',
-    details: 'Showcase your Urdu poetry skills.'
   },
   {
     id: 'verse-of-the-vigil',
@@ -186,7 +176,7 @@ const events = [
     title: 'SPIN-A-YARN',
     category: 'Literary',
     description: 'Storytelling competition.',
-    image: getCloudinaryImageUrl('spin-a-yarn'),
+    image: getCloudinaryImageUrl('Screenshot_2025-04-13_at_2.59.22_AM_phxfdd'),
     // rulebook: '/rulebooks/spin-a-yarn.pdf',
     rulebook: 'https://drive.google.com/drive/u/0/mobile/folders/1HDTET2hSR5IvnvghrGC3aAaegtsq3pGS?usp=drive_link',
     details: 'Tell engaging stories with your unique style.'
@@ -228,7 +218,7 @@ const events = [
     title: 'ADVERTISE IT RIGHT',
     category: 'Business',
     description: 'Advertising competition.',
-    image: getCloudinaryImageUrl('advertise-it-right'),
+    image: getCloudinaryImageUrl('Screenshot_2025-04-13_at_2.53.50_AM_q95epp'),
     // rulebook: '/rulebooks/advertise-it-right.pdf',
     rulebook: 'https://drive.google.com/drive/u/0/mobile/folders/1HDTET2hSR5IvnvghrGC3aAaegtsq3pGS?usp=drive_link',
     details: 'Create compelling advertisements.'
@@ -250,7 +240,7 @@ const events = [
     title: 'HARRY POTTER Quiz',
     category: 'Quiz',
     description: 'Harry Potter universe quiz.',
-    image: getCloudinaryImageUrl('harry-potter-quiz'),
+    image: getCloudinaryImageUrl('Quidditch_vnskx5'),
     // rulebook: '/rulebooks/harry-potter-quiz.pdf',
     rulebook: 'https://drive.google.com/drive/u/0/mobile/folders/1HDTET2hSR5IvnvghrGC3aAaegtsq3pGS?usp=drive_link',
     details: 'Test your knowledge of the Wizarding World.'

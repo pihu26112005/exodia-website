@@ -15,7 +15,7 @@ export const Card = React.memo(
       <div>
         <div
           className={cn(
-            "rounded-3xl border-2 border-[#BB0000] relative bg-gray-100 dark:bg-neutral-900 overflow-hidden h-36 w-36 md:h-80 md:w-72 transition-all duration-300 ease-out"
+            "rounded-3xl border-2 border-[#BB0000] relative bg-gray-100 dark:bg-neutral-900 overflow-hidden h-48 w-48 md:h-96 md:w-80 transition-all duration-300 ease-out"
           )}
         >
           <Image

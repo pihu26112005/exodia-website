@@ -1,29 +1,34 @@
-import { connectToDB } from "@/lib/connectDB";
-import { Announcement } from "@/lib/models/announcement";
-
+import { connectToDatabase } from "@/lib/connectDB";
 import { NextResponse } from "next/server";
 
 export async function POST(request: Request) {
-    console.log("asljfnlejavdn/api/announcements");
-    const body = await request.json();
+  const body = await request.json();
 
-    console.log(body);
-  
-    if (!body || !body.title || !body.description) {
-      return new NextResponse("Invalid data", { status: 400 });
-    }
-  
-    await connectToDB();
-  
-    try {
-      const createdAt = new Date();
-      const newAnnouncement = new Announcement({ title: body.title, description: body.description, imageUrl: body.imageUrl, time: createdAt });
-      await newAnnouncement.save();
-  
-      return NextResponse.json(newAnnouncement);
-    }
-    catch (error) {
-      console.log(error);
-      return new NextResponse("Internal Server Error", { status: 500 });
-    }
+  // Validating incoming request data
+  if (!body || !body.title || !body.description) {
+    return new NextResponse("Invalid data", { status: 400 });
+  }
+
+  try {
+    // Establish the database connection
+    const db = await connectToDatabase();
+
+    const createdAt = new Date();
+
+    const newAnnouncement = {
+      title: body.title,
+      description: body.description,
+      imageUrl: body.imageUrl,
+      time: createdAt,
+    };
+
+    // Insert the new announcement document
+    const result = await db.collection("announcements").insertOne(newAnnouncement);
+
+    // Respond with the created announcement
+    return NextResponse.json({ ...newAnnouncement, _id: result.insertedId });
+  } catch (error) {
+    console.error("Database operation failed:", error);
+    return new NextResponse("Internal Server Error", { status: 500 });
+  }
 }

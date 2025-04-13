@@ -15,37 +15,34 @@ const contacts = [
   {
     name: "Vishal Kumar",
     photo: "/john-doe.jpg",
-    posn: "Convener",
-    // number: "+91 98765 43210",
+    posn: "Convenor",
     email: "convenor@exodia-iitmandi.org",
   },
   {
     name: "Aryan Singh",
     photo: "/jane-smith.jpg",
-    posn: "Convener",
-    // number: "+91 87654 32109",
+    posn: "Convenor",
     email: "convenor@exodia-iitmandi.org",
-  },
-  {
-    name: "Vivek Agarval",
-    photo: "/jane-smith.jpg",
-    posn: "Cultural Secretary",
-    // number: "+91 87654 32109",
-    email: "cultural_secretary@students.iitmandi.ac.in",
   },
   {
     name: "Divyanshu Raj",
     photo: "/alice-johnson.jpg",
     number: "+91 9811197429",
     posn: "Head",
-    email: "Publicrelations@exodia-iitmandi.org",
+    email: "publicrelations@exodia-iitmandi.org",
   },
   {
     name: "Gourav Chaudhary",
     photo: "/bob-williams.jpg",
     number: "+91 8278741047 ",
     posn: "Head",
-    email: "corporaterelations@exodia-iitmandi.org",
+    email: "publicrelations@exodia-iitmandi.org",
+  },
+  {
+    name: "Vivek Aggarwal",
+    photo: "/jane-smith.jpg",
+    posn: "Cultural Secretary",
+    email: "cultural_secretary@students.iitmandi.ac.in",
   },
 ];
 
@@ -107,8 +104,8 @@ const page = () => {
             <p className="text-white/80 text-xl mt-2">Reach out to our team</p>
           </div>
 
-          {/* Contact Cards */}
-          <div className="grid md:grid-cols-2 gap-8">
+          {/* Contact Cards - Centered layout */}
+          <div className="flex flex-wrap justify-center gap-6">
             {contacts.map((contact, index) => (
               <motion.div
                 key={index}
@@ -135,9 +132,7 @@ const page = () => {
                 {/* Contact Details */}
                 <h2 className="text-white text-2xl text-center font-bold">{contact.name}</h2>
                 <h2 className="text-white text-lg text-center">
-                  <span className="text-[#BB0000]">[</span>
                   {contact.posn}
-                  <span className="text-[#BB0000]">]</span>
                 </h2>
                 {contact.number && <p className="text-white/80 text-lg text-center mt-1">{contact.number}</p>}
                 <p className="text-[#BB0000] text-lg text-center">{contact.email}</p>
@@ -148,9 +143,6 @@ const page = () => {
 
 
       </div>
-
-
-      <FAQ />
 
 
       {/* // how to reach  */}
@@ -373,6 +365,8 @@ const page = () => {
             </Modal>
           </motion.div>
         </motion.div>
+        <FAQ />
+
       </div>
     </>
   )

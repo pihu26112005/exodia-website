@@ -8,6 +8,7 @@ import About_VideoSection from './components/About_VideoSection';
 import HorrorLogo from './components/HorrorLogo';
 import Image from 'next/image';
 import { getCloudinaryImageUrl } from '@/lib/cloudinary';
+import TextRevealAnimation from './components/TextRevealAnimation';
 
 
 const horiscrollimage = [
@@ -315,6 +316,8 @@ export default function Home() {
         </div>
       </div>
 
+      
+      <TextRevealAnimation />
 
       {/* Call to Action */}
       <div className="relative z-50 mt-10 sm:mt-16">

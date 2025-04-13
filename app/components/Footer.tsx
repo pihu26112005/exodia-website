@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import Image from 'next/image';
+import { FaFacebook, FaInstagram, FaLinkedin, FaXTwitter, FaEnvelope, FaMapPin, FaCopyright } from 'react-icons/fa6';
 
 const Footer = () => {
   return (
@@ -46,14 +46,17 @@ const Footer = () => {
           <div className="space-y-4">
             <h3 className="text-xl sm:text-2xl font-bold text-[#BB0000]">Contact Us</h3>
             <ul className="space-y-2 text-sm sm:text-base">
-              <li className="text-gray-400">
-                cultural_secretary@students.iitmandi.ac.in
+              <li className="text-gray-400 flex items-center gap-2">
+                <FaEnvelope className="w-4 h-4" />
+                convenor@exodia-iitmandi.org
               </li>
-              <li className="text-gray-400">
-                +91 77393 01036
+              <li className="text-gray-400 flex items-center gap-2">
+                <FaEnvelope className="w-4 h-4" />
+                publicrelations@exodia-iitmandi.org
               </li>
-              <li className="text-gray-400">
-                IIT Mandi, Himachal Pradesh
+              <li className="text-gray-400 flex items-center gap-2">
+                <FaMapPin className="w-4 h-4" />
+                SAC, A19 2nd floor, IIT Mandi, Himachal Pradesh
               </li>
             </ul>
           </div>
@@ -63,26 +66,21 @@ const Footer = () => {
             <h3 className="text-xl sm:text-2xl font-bold text-[#BB0000]">Follow Us</h3>
             <div className="flex space-x-4 sm:space-x-6">
               {[
-                { href: 'https://www.facebook.com/Exodia.IITMandi', icon: '/socialmedia/facebook.png' },
-                { href: 'https://www.instagram.com/exodia.iitmandi?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==', icon: '/socialmedia/insta.png' },
-                { href: 'https://www.linkedin.com/company/exodia-iitmandi/', icon: '/socialmedia/linkedin.png' },
-                { href: 'https://x.com/exodia_iitmandi', icon: '/socialmedia/twitter.png' }
+                { href: 'https://www.facebook.com/Exodia.IITMandi', icon: FaFacebook },
+                { href: 'https://www.instagram.com/exodia.iitmandi?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==', icon: FaInstagram },
+                { href: 'https://www.linkedin.com/company/exodia-iitmandi/', icon: FaLinkedin },
+                { href: 'https://x.com/exodia_iitmandi', icon: FaXTwitter }
               ].map((social) => (
                 <motion.a
-                  key={social.icon}
+                  key={social.href}
                   href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.95 }}
-                  className="w-8 h-8 sm:w-10 sm:h-10 bg-[#BB0000]/20 rounded-full flex items-center justify-center hover:bg-[#BB0000]/40 transition-colors"
+                  className="w-8 h-8 sm:w-10 sm:h-10  flex items-center justify-center "
                 >
-                  <Image
-                    src={social.icon}
-                    alt="Social Icon"
-                    width={24}
-                    height={24}
-                    className="w-6 h-6 sm:w-8 sm:h-8"
-                    priority
-                  />
+                  <social.icon className="w-5 h-5 sm:w-6 sm:h-6" />
                   <span className="sr-only">Social Icon</span>
                 </motion.a>
               ))}
@@ -93,22 +91,12 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="mt-8 sm:mt-12 pt-6 sm:pt-8 border-t border-[#BB0000]/20">
           <div className="flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
-            <p className="text-gray-400 text-sm sm:text-base">
-              © 2024 Exodia. All rights reserved.
+            <p className="text-gray-400 text-sm sm:text-base flex items-center gap-2">
+              <FaCopyright className="w-4 h-4" />
+              {new Date().getFullYear()} Exodia. All rights reserved.
             </p>
             <div className="flex space-x-4 sm:space-x-6">
-              <Link
-                href="/privacy"
-                className="text-gray-400 hover:text-[#BB0000] transition-colors text-sm sm:text-base"
-              >
-                Privacy Policy
-              </Link>
-              <Link
-                href="/terms"
-                className="text-gray-400 hover:text-[#BB0000] transition-colors text-sm sm:text-base"
-              >
-                Terms of Service
-              </Link>
+             
             </div>
           </div>
         </div>
