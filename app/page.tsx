@@ -1,15 +1,18 @@
 'use client';
 
 import Link from 'next/link'
-import { useRef, useEffect } from 'react';
+import Image from 'next/image';
+
+import { useRef, useEffect, useState } from 'react';
+
 import { motion, useScroll, useTransform } from 'framer-motion';
+
 import Card from './components/Card';
 import About_VideoSection from './components/About_VideoSection';
 import HorrorLogo from './components/HorrorLogo';
-import Image from 'next/image';
-import { getCloudinaryImageUrl } from '@/lib/cloudinary';
 import TextRevealAnimation from './components/TextRevealAnimation';
 
+import { getCloudinaryImageUrl } from '@/lib/cloudinary';
 
 const horiscrollimage = [
   '/trail/1.png',
@@ -49,19 +52,15 @@ export default function Home() {
     return textZoomToVideoeasedScrollProgress;
   };
 
-
   const targetRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: targetRef,
     offset: ['start end', 'end start']
   });
 
-  // Transform scroll progress into horizontal movement
   const x = useTransform(scrollYProgress, [0, 1], ['40%', '-25%']);
 
-  // Create dummy images in public folder if they don't exist
   useEffect(() => {
-    // This is just a placeholder effect - in a real app, you'd have actual images
     console.log('Component mounted');
   }, []);
 
