@@ -37,7 +37,7 @@ export default function SponCard({
 
   return (
     <div
-      className="relative h-[400px] w-full md:w-[320px] perspective-[1000px]"
+      className="relative h-[400px] w-[320px] perspective-[1000px]"
       onMouseEnter={() => !isMobile && setIsHovered(true)}
       onMouseLeave={() => !isMobile && setIsHovered(false)}
     >
@@ -65,6 +65,10 @@ export default function SponCard({
                   exit={{ opacity: 0 }}
                   transition={{ duration: 0.3 }}
                 ></motion.div>
+              )}
+
+              {isMobile && (
+                <div className='opacity-30 absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent' />
               )}
             </div>
 
