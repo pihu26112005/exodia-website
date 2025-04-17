@@ -42,7 +42,7 @@ export default function SponCard({
       onMouseLeave={() => !isMobile && setIsHovered(false)}
     >
       <motion.div
-        className="relative w-full h-full transition-all duration-500"
+        className="relative w-full h-full transition-all duration-500 hover:border-2 rounded-lg border-[#BB0000]"
         style={{ transformStyle: 'preserve-3d' }}
       >
         {/* Front of card */}
