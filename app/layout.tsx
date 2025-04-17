@@ -12,6 +12,7 @@ import PreLoader from "./components/PreLoader";
 import CanonicalTag from "./components/CanonicalTag";
 
 import { ToasterProvider } from "@/lib/providers/toast-provider";
+import FloatingBall from "./components/Anouncement_ball";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -64,12 +65,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <head>
         <CanonicalTag />
       </head>
-      <body className={`${inter.variable} font-sans antialiased min-h-screen flex flex-col bg-[#080808] relative`}>
+      <body className={`${inter.variable} font-sans antialiased min-h-screen flex flex-col bg-[#080808] relative overflow-x-hidden`}>
         <div className="fixed inset-0 bg-[#1a0000] -z-10" />
         <PreLoader />
         <Header />
         <main className="flex-grow relative z-10">
           {children}
+          <FloatingBall />
         </main>
         <Footer />
         <HorrorTimer />

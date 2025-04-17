@@ -9,6 +9,39 @@
   --darker-bg: #050505;
 }
 
+/* filepath: /home/piyush/Downloads/exodia-website-main/app/globals.css */
+/* html, body {
+  overflow-x: hidden;
+}
+ */
+
+
+ /* Custom scrollbar styles */
+::-webkit-scrollbar {
+  width: 12px; /* Width of the scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background: #080808; /* Background of the scrollbar track */
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--blood-red); /* Red color for the scrollbar thumb */
+  border-radius: 6px; /* Rounded corners for the scrollbar thumb */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--blood-red-hover); /* Brighter red on hover */
+}
+
+/* For Firefox (fallback) */
+html {
+  scrollbar-width: thin; /* Makes the scrollbar thinner */
+  scrollbar-color: var(--blood-red) #080808; /* Thumb color and track color */
+}
+
+
+
 @layer base {
   :root {
     --color-background: var(--background);
