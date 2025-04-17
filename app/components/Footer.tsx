@@ -26,7 +26,7 @@ const Footer = () => {
             <ul className="space-y-2">
               {[
                 { href: '/events', label: 'Events' },
-                // { href: '/schedule', label: 'Schedule' },
+                { href: '/schedule', label: 'Schedule' },
                 { href: '/sponsors', label: 'Sponsors' },
                 { href: '/contact', label: 'Contact' },
                 { href: '/teams', label: 'Teams' },
