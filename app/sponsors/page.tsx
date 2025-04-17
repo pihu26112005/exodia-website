@@ -148,7 +148,7 @@ const page = () => {
             <div>
                 <div className='pt-16 text-white text-md md:text-xl lg:text-2xl font-semibold mb-4'>
                     <motion.h1 
-                      className="text-4xl sm:text-5xl font-bold text-center mb-16"
+                      className="text-[3rem] max-2xl:text-[4rem] max-xl:text-[3rem] max-lg:text-[3rem] max-md:text-[2rem] max-sm:text-[2rem] text-center mb-16"
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.6 }}

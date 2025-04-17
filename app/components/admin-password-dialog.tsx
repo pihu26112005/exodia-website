@@ -48,7 +48,7 @@ export const AdminPasswordModal = ({ isOpen, onClose, onOpen, setIsAdmin }: Admi
             description="Enter the admin password for access to the admin page"
             isOpen={isOpen}
             onClose={onClose}
-            className='bg-white'
+            className='bg-white w-[40%] max-sm:w-[80%]'
         >
             <Toaster toastOptions={{ style: { zIndex: 9999 } }} position='bottom-left' />
             <div>

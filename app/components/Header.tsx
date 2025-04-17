@@ -10,7 +10,7 @@ const Header = () => {
 
   const menuItems = [
     { href: '/events', label: 'Events' },
-    { href: '/schedule', label: 'Schedule' },
+    // { href: '/schedule', label: 'Schedule' },
     { href: '/sponsors', label: 'Sponsors' },
     { href: '/teams', label: 'Teams' },
     { href: '/contact', label: 'Contact' },
