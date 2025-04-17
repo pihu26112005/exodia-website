@@ -1,100 +1,169 @@
 "use client"
+
 import React from 'react'
-import Sponsors_Card from '../components/sponsor_Card';
+
 import { motion } from "framer-motion";
+
+import SponCard from '../components/SponCard';
+
 const SponList = [
     {
-        name: 'Sponsor 1',
-        image: '/assets/sponsors/1.png'
+        name: 'IMHERE',
+        image: 'https://a64j3m5x58.ufs.sh/f/XmKfJ6hWnfg83GgKJCz72kmsCXMLPhjzWtoifAyncURqe9d8',
+        description: 'Lifestyle and Apparel Partner',
+        className: 'bg-pink-200'
     },
     {
-        name: 'Sponsor 2',
-        image: '/assets/sponsors/2.jpeg'
+        name: 'hpscb (Scheduled Bank)',
+        image: '/assets/sponsors/22.png',
+        description: 'Banking Partner',
+        className: 'bg-blue-200'
     },
     {
-        name: 'Sponsor 3',
-        image: '/assets/sponsors/3.jpeg'
+        name: 'Hydropure',
+        image: '/assets/sponsors/21.png',
+        description: 'Title Sponsor',
+        className: 'bg-yellow-300'
     },
     {
-        name: 'Sponsor 4',
-        image: '/assets/sponsors/4.png'
+        name: 'Vivo',
+        image: 'https://a64j3m5x58.ufs.sh/f/XmKfJ6hWnfg8SqEXAIGQzaUY8Fi6fOHD15m2MwZtqupgo3hN',
+        description: 'Platinum Sponsor',
+        className: 'bg-gray-300'
     },
     {
-        name: 'Sponsor 5',
-        image: '/assets/sponsors/5.jpeg'
+        name: 'Flyjone',
+        image: 'https://a64j3m5x58.ufs.sh/f/XmKfJ6hWnfg86bByypmwX9hA86oIV0kMUetRYfrxvLGNiHJa',
+        description: 'Platinum Sponsor',
+        className: 'bg-gray-300'
     },
     {
-        name: 'Sponsor 6',
-        image: '/assets/sponsors/6.png'
+        name: 'Makino',
+        image: 'https://a64j3m5x58.ufs.sh/f/XmKfJ6hWnfg8eOZjNV8xNtKWz9Q3g1HAlDucC8hSv7wLenxb',
+        description: 'Bronze Partner',
+        className: 'bg-yellow-100'
     },
     {
-        name: 'Sponsor 7',
-        image: '/assets/sponsors/7.jpeg'
+        name: 'SJVN',
+        image: '/assets/sponsors/19.png',
+        description: 'Platinum Sponsor',
+        className: 'bg-gray-300'
     },
     {
-        name: 'Sponsor 8',
-        image: '/assets/sponsors/8.png'
+        name: 'Technosport',
+        image: 'https://a64j3m5x58.ufs.sh/f/XmKfJ6hWnfg86EgaoHJmwX9hA86oIV0kMUetRYfrxvLGNiHJ',
+        description: 'Sportswear Partner',
+        className: 'bg-red-200'
     },
     {
-        name: 'Sponsor 9',
-        image: '/assets/sponsors/9.png'
+        name: 'StockEdge',
+        image: 'https://a64j3m5x58.ufs.sh/f/XmKfJ6hWnfg8F6HWqHZ1sOhtfncomTS60MER1JXj9ueN28kI',
+        description: 'Sponsor',
+        className: 'bg-green-100'
     },
     {
-        name: 'Sponsor 10',
-        image: '/assets/sponsors/10.png'
+        name: 'Learning While Travelling (LWT)',
+        image: 'https://a64j3m5x58.ufs.sh/f/XmKfJ6hWnfg8yutUV3bcnD1Z80MwGei4QNvUP6JjxgdSYHBA',
+        description: 'Ecosystem Partner',
+        className: 'bg-indigo-100'
     },
     {
-        name: 'Sponsor 11',
-        image: '/assets/sponsors/11.png'
+        name: 'Dublieu',
+        image: '/assets/sponsors/13.png',
+        description: 'Student Opportunities Partner',
+        className: 'bg-purple-100'
     },
     {
-        name: 'Sponsor 12',
-        image: '/assets/sponsors/12.png'
+        name: 'Desert Diva Cake Studio',
+        image: '/assets/sponsors/12.png',
+        description: 'Stall Partner',
+        className: 'bg-amber-100'
     },
     {
-        name: 'Sponsor 13',
-        image: '/assets/sponsors/13.png'
+        name: 'AbhiBus',
+        image: 'https://a64j3m5x58.ufs.sh/f/XmKfJ6hWnfg8hYIaDSgiPInSsWU8AM03Hk6OVjE5NlYFoqrg',
+        description: 'Travel Partner',
+        className: 'bg-blue-100'
     },
     {
-        name: 'Sponsor 14',
-        image: '/assets/sponsors/14.png'
+        name: '2.Oh!',
+        image: 'https://a64j3m5x58.ufs.sh/f/XmKfJ6hWnfg80u5qVd6nPm1We5dZyOsKhfk4grHcBuEtjiqb',
+        description: 'Gifting Partner',
+        className: 'bg-pink-100'
     },
+    {
+        name: 'Luxe Bushahar Closet',
+        image: 'https://a64j3m5x58.ufs.sh/f/XmKfJ6hWnfg873mgP4VgzrG1oD8Ky4Iwvx0LatSiTFCZ2BhA',
+        description: 'Stall Sponsor',
+        className: 'bg-rose-100'
+    },
+    {
+        name: 'Paramount Chess',
+        image: 'https://a64j3m5x58.ufs.sh/f/XmKfJ6hWnfg8EgiBYWRXyL9MO1q2nHQca6xPvFe7YNiRswgV',
+        description: 'Chess Partner',
+        className: 'bg-orange-100'
+    },
+    {
+        name: 'Plush',
+        image: 'https://a64j3m5x58.ufs.sh/f/XmKfJ6hWnfg89hnaxCSkjJGLWsDmzwQdtIlERYHSO5hVUi2y',
+        description: 'Hygiene Partner',
+        className: 'bg-lime-100'
+    },
+    {
+        name: 'Qoneqt',
+        image: 'https://a64j3m5x58.ufs.sh/f/XmKfJ6hWnfg859bmvvUAUQ6YOXCtv3Fsqkif4u7ENMrxJenS',
+        description: 'Community Partner',
+        className: 'bg-sky-100'
+    },
+    {
+        name: 'Primes & Zooms',
+        image: 'https://a64j3m5x58.ufs.sh/f/XmKfJ6hWnfg8OMWiYRZAVZirtFvpze2T4jfB9k1RaSXCLubx',
+        description: 'Prize Sponsor',
+        className: 'bg-teal-100'
+    },
+    {
+        name: 'Utho',
+        image: 'https://a64j3m5x58.ufs.sh/f/XmKfJ6hWnfg8XLxTLQhWnfg8CkBHLr7YPo4jxz6Elt0a5ucZ',
+        description: 'Cloud Partner',
+        className: 'bg-cyan-100'
+    },
+    {
+        name: 'Chess.com',
+        image: 'https://a64j3m5x58.ufs.sh/f/XmKfJ6hWnfg8KgyWrT3y0NMqAiv1scShIQEJfUmRlp8G745K',
+        description: 'Sponsor',
+        className: 'bg-green-100'
+    },
+    {
+        name: 'PNC Foods and Caterers',
+        image: 'https://a64j3m5x58.ufs.sh/f/XmKfJ6hWnfg8xDRrCuIygaqUKb1hXvzrWR4feD9nJAIom7ck',
+        description: 'Sponsor',
+        className: 'bg-green-100'
+    }
 ];
 
 
 const page = () => {
     return (
-        <div className="flex justify-center items-center flex-col py-36">
-            <motion.h2
-                className="text-3xl sm:text-4xl font-bold mb-6 sm:mb-8 text-white"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
-                viewport={{ once: true }}
-            >
-                Coming <span className="text-[#BB0000]">Soon...</span>
-            </motion.h2>
-
-            {/* <motion.h2
-                className="text-3xl sm:text-4xl font-bold mb-6 sm:mb-8 text-white"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
-                viewport={{ once: true }}
-            >
-                Meet Our <span className="text-[#BB0000]">Sponsors</span>
-            </motion.h2> */}
-
-            {/* <p className="text-lg sm:text-xl text-gray-300 max-w-2xl px-6 mb-6 text-center">
-                We are proud to have the support of these amazing{" "}
-                <span className="text-[#BB0000] font-semibold">Sponsors</span> who make this event possible!
-            </p>
-
-            <div className="flex flex-row flex-wrap justify-center items-center gap-10 max-sm:gap-2">
-                {SponList.map(({ name, image }, index) => (
-                    <Sponsors_Card key={index} name={name} image={image} />
-                ))}
-            </div> */}
+        <div className="bg-zinc-950 pt-24 px-4 md:px-12 mt-4 space-y-8">
+            <div>
+                <div className='pt-16 text-white text-md md:text-xl lg:text-2xl font-semibold mb-4'>
+                    <motion.h1 
+                      className="text-4xl sm:text-5xl font-bold text-center mb-16"
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.6 }}
+                    >
+                      Exodia <span className="text-[#BB0000]">Sponsors</span>
+                    </motion.h1>
+                </div>
+                <div className='flex justify-center items-center mb-8'>
+                    <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12'>
+                        {SponList.map((spon) => (
+                            <SponCard key={spon.image} image={spon.image} name={spon.name} description={spon.description} classN={spon.className} />
+                        ))}
+                    </div>
+                </div>
+            </div>
         </div>
     )
 }
