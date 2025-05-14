@@ -5,6 +5,7 @@ import { cn } from '@/lib/utils';
 import { motion } from 'framer-motion';
 
 import Image from 'next/image';
+import Link from 'next/link';
 
 import { useState, useEffect } from 'react';
 
@@ -12,6 +13,7 @@ interface SponCardProps {
   name: string;
   image: string;
   description: string;
+link?: string;
   classN: string;
 }
 
@@ -19,6 +21,7 @@ export default function SponCard({
   name,
   image,
   description,
+  link,
   classN
 }: SponCardProps) {
   const [isHovered, setIsHovered] = useState(false);
@@ -91,6 +94,14 @@ export default function SponCard({
                 {name}
               </motion.h3>
             </div>
+
+            {link && (
+              <Link 
+                href={link}
+                target="_blank"
+                className="absolute inset-0"
+              />
+            )}
 
             {/* Click indicator - only show on desktop */}
             <motion.div
