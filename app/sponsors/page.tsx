@@ -8,23 +8,30 @@ import SponCard from '../components/SponCard';
 
 const SponList = [
     {
+        name: 'Hydropure',
+        image: '/hhhh.png',
+        description: 'Title Sponsor',
+        className: 'bg-yellow-300'
+    },
+    {
+        name: 'SJVN',
+        image: '/ssss.jpeg',
+        description: 'Platinum Sponsor',
+        className: 'bg-gray-300',
+        link: 'https://sjvn.nic.in/'
+    },
+    {
         name: 'IMHERE',
         image: 'https://a64j3m5x58.ufs.sh/f/XmKfJ6hWnfg83GgKJCz72kmsCXMLPhjzWtoifAyncURqe9d8',
         description: 'Lifestyle and Apparel Partner',
         className: 'bg-pink-200'
     },
-    {
-        name: 'hpscb (Scheduled Bank)',
-        image: '/assets/sponsors/22.png',
-        description: 'Banking Partner',
-        className: 'bg-blue-200'
-    },
-    {
-        name: 'Hydropure',
-        image: '/assets/sponsors/21.png',
-        description: 'Title Sponsor',
-        className: 'bg-yellow-300'
-    },
+    // {
+    //     name: 'hpscb (Scheduled Bank)',
+    //     image: '/assets/sponsors/22.png',
+    //     description: 'Banking Partner',
+    //     className: 'bg-blue-200'
+    // },
     {
         name: 'Vivo',
         image: 'https://a64j3m5x58.ufs.sh/f/XmKfJ6hWnfg8SqEXAIGQzaUY8Fi6fOHD15m2MwZtqupgo3hN',
@@ -44,12 +51,6 @@ const SponList = [
         className: 'bg-yellow-100'
     },
     {
-        name: 'SJVN',
-        image: '/assets/sponsors/19.png',
-        description: 'Platinum Sponsor',
-        className: 'bg-gray-300'
-    },
-    {
         name: 'Technosport',
         image: 'https://a64j3m5x58.ufs.sh/f/XmKfJ6hWnfg86EgaoHJmwX9hA86oIV0kMUetRYfrxvLGNiHJ',
         description: 'Sportswear Partner',
@@ -67,18 +68,18 @@ const SponList = [
         description: 'Ecosystem Partner',
         className: 'bg-indigo-100'
     },
-    {
-        name: 'Dublieu',
-        image: '/assets/sponsors/13.png',
-        description: 'Student Opportunities Partner',
-        className: 'bg-purple-100'
-    },
-    {
-        name: 'Desert Diva Cake Studio',
-        image: '/assets/sponsors/12.png',
-        description: 'Stall Partner',
-        className: 'bg-amber-100'
-    },
+    // {
+    //     name: 'Dublieu',
+    //     image: '/assets/sponsors/13.png',
+    //     description: 'Student Opportunities Partner',
+    //     className: 'bg-purple-100'
+    // },
+    // {
+    //     name: 'Desert Diva Cake Studio',
+    //     image: '/assets/sponsors/12.png',
+    //     description: 'Stall Partner',
+    //     className: 'bg-amber-100'
+    // },
     {
         name: 'AbhiBus',
         image: 'https://a64j3m5x58.ufs.sh/f/XmKfJ6hWnfg8hYIaDSgiPInSsWU8AM03Hk6OVjE5NlYFoqrg',
@@ -159,7 +160,7 @@ const page = () => {
                 <div className='flex justify-center items-center mb-8'>
                     <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12'>
                         {SponList.map((spon) => (
-                            <SponCard key={spon.image} image={spon.image} name={spon.name} description={spon.description} classN={spon.className} />
+                            <SponCard key={spon.image} image={spon.image} name={spon.name} link={spon.link} description={spon.description} classN={spon.className} />
                         ))}
                     </div>
                 </div>
